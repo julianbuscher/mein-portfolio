@@ -1,0 +1,58 @@
+/* Farbe — Brand Guidelines §4. Neutral-monochrom, genau ein funktionaler Akzent. */
+:root {
+  /* Basiswerte */
+  --ink: #000000;
+  --ink-body: #262626;
+  --ink-muted: #525252;
+  --line: #D4D4D4;
+  --surface: #F7F7F7;
+  --surface-2: #FAFAFA;
+  --bg: #FFFFFF;
+  --accent: #E8500F;
+  --accent-text: #C4410C;
+
+  /* Semantische Aliase */
+  --text-heading: var(--ink);
+  --text-body: var(--ink-body);
+  --text-meta: var(--ink-muted);
+  --text-caption: var(--ink-muted);
+  --text-disabled: var(--ink-muted);
+  --text-on-dark: #FFFFFF;
+  --text-link: var(--accent-text);
+  --text-link-hover: var(--ink);
+
+  --surface-page: var(--bg);
+  --surface-card: var(--surface);
+  --surface-alt: var(--surface-2);
+  --surface-render: var(--surface-2);
+  --surface-inverse: var(--ink-body);
+
+  --border-default: var(--line);
+  --border-strong: var(--ink-body);
+  --focus-ring: var(--accent);
+
+  /* Datenreihen in Plots — §7.5. Nie Rot/Grün als Bedeutungspaar. */
+  --plot-series-1: #000000;
+  --plot-series-2: #E8500F;
+  --plot-series-3: #767676;
+  --plot-grid: #EDEDED;
+  --plot-axis: var(--ink-muted);
+
+  /* Annotation — §7.4 */
+  --annotation-line: var(--accent);
+  --annotation-label-bg: #FFFFFF;
+  --annotation-label-ink: var(--ink-body);
+}
+
+/* Dunkelmodus: optional, niedrige Priorität (§4.2). Akzent bleibt unverändert. */
+:root[data-theme="dark"] {
+  --bg: #171717;
+  --ink: #FAFAFA;
+  --ink-body: #E5E5E5;
+  --ink-muted: #A3A3A3;
+  --line: #333333;
+  --surface: #1F1F1F;
+  --surface-2: #1A1A1A;
+  --text-on-dark: #171717;
+  --annotation-label-bg: #FAFAFA;
+}

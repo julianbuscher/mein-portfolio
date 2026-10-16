@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Roboterarm in Fusion 360 – Julian Buscher">
+<meta property="og:description" content="Nachkonstruktion eines Roboterarms mit Greifer nach einem technischen Zeichnungssatz: zehn Bauteile in Fusion 360 modelliert und zu einer vollständigen Baugruppe zusammengesetzt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julianbuscher.github.io/mein-portfolio/ProjektRoboterarm.dc.html">
+<meta property="og:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-roboterarm.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rendering des nachkonstruierten Roboterarms">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-roboterarm.jpg">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Roboterarm in Fusion 360 – Julian Buscher</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="description" content="Nachkonstruktion eines Roboterarms mit Greifer nach einem technischen Zeichnungssatz: zehn Bauteile in Fusion 360 modelliert und zu einer vollständigen Baugruppe zusammengesetzt.">
+<meta name="jb-description-de" content="Nachkonstruktion eines Roboterarms mit Greifer nach einem technischen Zeichnungssatz: zehn Bauteile in Fusion 360 modelliert und zu einer vollständigen Baugruppe zusammengesetzt.">
+<meta name="jb-description-en" content="A robotic arm with gripper rebuilt from a technical drawing set: ten parts modelled in Fusion 360 and assembled into a complete assembly.">
+<meta property="og:title" content="Roboterarm in Fusion 360 – Julian Buscher">
+<meta property="og:description" content="Nachkonstruktion eines Roboterarms mit Greifer nach einem technischen Zeichnungssatz: zehn Bauteile in Fusion 360 modelliert und zu einer vollständigen Baugruppe zusammengesetzt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julianbuscher.github.io/mein-portfolio/ProjektRoboterarm.dc.html">
+<meta property="og:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-roboterarm.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rendering des nachkonstruierten Roboterarms">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-roboterarm.jpg">
+<link rel="stylesheet" href="_ds/julian-buscher-design-system-ede0a14e-3dfb-44a3-85ff-4206c0e59416/styles.css">
+<style>body{margin:0;background:#FFFFFF}a{color:#C4410C}a:hover{color:#000000}
+@view-transition{navigation:auto}
+::view-transition-group(*){animation-duration:380ms;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}
+::view-transition-group(vt-media){animation-duration:420ms}
+::view-transition-group(vt-title){animation-duration:340ms}
+::view-transition-old(root){animation:jbOut 380ms cubic-bezier(0.32,0.72,0,1) both}
+::view-transition-new(root){animation:jbIn 380ms cubic-bezier(0.32,0.72,0,1) 100ms both}
+:focus-visible{outline:2px solid #E8500F;outline-offset:2px}
+[data-projnav-arrow]{display:inline-block;transition:transform 200ms cubic-bezier(0.32,0.72,0,1)}
+[data-projnav]:hover [data-projnav-title]{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+[data-projnav="prev"]:hover [data-projnav-arrow]{transform:translateX(-4px)}
+[data-projnav="next"]:hover [data-projnav-arrow]{transform:translateX(4px)}
+@media (max-width:640px){[data-projnav="next"]{text-align:left}}
+@media (prefers-reduced-motion:reduce){[data-projnav-arrow]{transition:none}[data-projnav]:hover [data-projnav-arrow]{transform:none}}
+@keyframes jbOut{to{opacity:0}}
+@keyframes jbIn{from{opacity:0}}
+@keyframes jbFadeOut{to{opacity:0}}
+@keyframes jbFadeIn{from{opacity:0}}
+::view-transition-image-pair(vt-media){isolation:none}
+::view-transition-old(vt-media),::view-transition-new(vt-media){animation:none;mix-blend-mode:normal;width:100%;height:100%;object-fit:cover}
+::view-transition-old(vt-title),::view-transition-new(vt-title){object-fit:contain;object-position:left top}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-group(vt-media),::view-transition-group(vt-title){animation-duration:150ms;animation-timing-function:linear}::view-transition-old(root){animation:jbFadeOut 150ms linear both}::view-transition-new(root){animation:jbFadeIn 150ms linear both}}
+@keyframes jbScrimIn{from{opacity:0}}
+@keyframes jbPanelIn{from{opacity:0;transform:scale(0.96)}}
+[data-press-soft]{transition:background-color 120ms ease-out}
+[data-press-soft]:active{background-color:#E5E5E5}
+[data-press-soft]{background-color:#F7F7F7}
+[data-press-soft]:hover{background-color:#EDEDED}
+[data-press-soft]:hover:active,[data-press-soft]:active{background-color:#E0E0E0 !important}
+[data-press-back]{background-color:#FFFFFF;transition:background-color 120ms ease-out,color 120ms ease-out}
+[data-press-back]:hover{background-color:#F7F7F7;color:#000000}
+[data-press-back]:hover:active,[data-press-back]:active{background-color:#EDEDED !important;color:#000000}</style>
+<script>
+(function(){function q(v){if(!v)return;['ready','finished','updateCallbackDone'].forEach(function(k){var p=v[k];if(p&&p['catch'])p['catch'](function(){});});}
+addEventListener('pagereveal',function(e){q(e.viewTransition);});
+addEventListener('pageswap',function(e){q(e.viewTransition);});
+addEventListener('unhandledrejection',function(e){var m=String((e.reason&&e.reason.message)||e.reason||'');if(m.indexOf('Transition was skipped')>-1)e.preventDefault();});})();
+</script>
+<script src="./i18n/lang.js"></script>
+<script src="./motion.js"></script>
+<style>@media (max-width:720px){header[data-jb-hdr]{flex-wrap:wrap!important;justify-content:center!important;row-gap:8px!important}header[data-jb-hdr]>[data-jb-hdr-spacer]{display:none!important}header[data-jb-hdr]>[data-jb-hdr-lang]{flex:0 0 100%!important;justify-content:center!important;order:2}}@media (max-width:480px){header[data-jb-hdr]{flex-wrap:nowrap!important;justify-content:space-between!important;padding:8px 10px!important;gap:8px!important}header[data-jb-hdr]>nav{flex-wrap:nowrap!important;gap:0!important;padding:4px!important;min-width:0}header[data-jb-hdr]>nav>a{font-size:clamp(12px,3.4vw,13px)!important;line-height:1.2!important;padding:5px 5px 4px!important;white-space:nowrap}header[data-jb-hdr]>nav>a:last-child{padding:5px 8px!important;margin-left:4px!important}header[data-jb-hdr]>[data-jb-hdr-lang]{flex:0 0 auto!important;order:0!important;justify-content:flex-end!important}header[data-jb-hdr]>[data-jb-hdr-lang] [role=group]{padding:2px!important}header[data-jb-hdr]>[data-jb-hdr-lang] button{font-size:12px!important;padding:6px 7px!important}}</style>
+</helmet>
+<div style="font-family:'Archivo',system-ui,sans-serif;color:#262626;font-size:17px;line-height:1.6;background:#FFFFFF;padding-bottom:128px">
+
+<header data-jb-hdr="1" style="position:sticky;top:0;z-index:10;background:#FFFFFF;padding:16px clamp(20px,5vw,80px);display:flex;align-items:center;gap:16px"><span data-jb-hdr-spacer="1" style="flex:1 1 0;min-width:0"></span>
+<nav style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px;background:#F7F7F7;border:1px solid #D4D4D4;border-radius:999px;padding:8px 12px">
+<a href="./PortfolioWebsite.dc.html" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#525252" style-hover="color:#262626"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+<a href="./PortfolioWebsite.dc.html#projekte" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#000000"><span data-lang="de" style="padding-bottom:2px;border-bottom:2px solid #000000">Projekte</span><span data-lang="en" style="padding-bottom:2px;border-bottom:2px solid #000000">Projects</span></a>
+<a href="./PortfolioWebsite.dc.html#ueber-mich" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#525252" style-hover="color:#262626"><span data-lang="de">Über mich</span><span data-lang="en">About</span></a>
+<a href="#kontakt" onClick="{{ openContact }}" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 16px;border-radius:999px;background:#262626;color:#FFFFFF;margin-left:8px" style-hover="background:#000000"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></a>
+</nav>
+<sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeContact }}" style="position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.32);display:flex;align-items:center;justify-content:center;padding:24px;overflow-y:auto;animation:jbScrimIn 200ms ease-out both">
+<div onClick="{{ stopClose }}" style="background:#FFFFFF;border-radius:10px;width:100%;max-width:420px;text-align:left;padding:24px;max-height:calc(100vh - 48px);overflow-y:auto;flex:0 0 auto;box-shadow:0 1px 2px rgba(0,0,0,.06), 0 18px 48px rgba(0,0,0,.14);animation:jbPanelIn 280ms cubic-bezier(0.32,0.72,0,1) both">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+<div style="font-size:34px;font-weight:600;line-height:1.04;letter-spacing:-0.012em;color:#000000"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></div>
+<a href="#kontakt" onClick="{{ closeContact }}" style="display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#262626;text-decoration:none;padding:6px 14px 6px 11px;border-radius:999px;border:1px solid #D4D4D4" data-press-back="1"><span style="font-size:14px;line-height:1">←</span><span data-lang="de">Zurück</span><span data-lang="en">Back</span></a>
+</div>
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252;margin-top:8px"><span data-lang="de">Innsbruck, Österreich</span><span data-lang="en">Innsbruck, Austria</span></div>
+<div style="display:grid;gap:8px;margin-top:32px">
+<a href="mailto:jul.buscher@gmail.com" target="_top" style="display:grid;gap:4px;padding:14px 16px;border-radius:10px;text-decoration:none" data-press-soft="1">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252">E-Mail</span>
+<span style="font-size:17px;font-weight:500;color:#000000;word-break:break-all">jul.buscher@gmail.com</span>
+</a>
+<a href="https://www.linkedin.com/in/julian-buscher-a948b340a/" target="_blank" rel="noopener noreferrer" style="display:grid;gap:4px;padding:14px 16px;border-radius:10px;text-decoration:none" data-press-soft="1">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252">LinkedIn</span>
+<span style="font-size:17px;font-weight:500;color:#000000"><span data-lang="de">Profil öffnen</span><span data-lang="en">Open profile</span></span>
+</a>
+</div>
+</div>
+</div>
+</sc-if>
+<div data-jb-hdr-lang="1" style="flex:1 1 0;min-width:0;display:flex;justify-content:flex-end">
+<div role="group" aria-label="Sprache / Language" style="display:flex;gap:2px;background:#F7F7F7;border:1px solid #D4D4D4;border-radius:999px;padding:4px">
+<button type="button" data-lang-switch="de" aria-pressed="true" style="font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:500;line-height:1;padding:8px 12px;border:0;border-radius:999px;cursor:pointer">DE</button>
+<button type="button" data-lang-switch="en" aria-pressed="false" style="font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:500;line-height:1;padding:8px 12px;border:0;border-radius:999px;cursor:pointer">EN</button>
+</div>
+</div>
+</header>
+
+<div style="max-width:1120px;margin:0 auto;padding:24px clamp(20px,5vw,80px) 0">
+<a href="./PortfolioWebsite.dc.html#projekte" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#000000"><span data-lang="de">← Zurück zu den Projekten</span><span data-lang="en">← Back to projects</span></a>
+</div>
+
+<section style="max-width:1440px;margin:32px auto 0;padding:0 clamp(20px,5vw,80px)">
+<img src="assets/images/roboterarm-hero-16x9-neu.png" alt="Roboterarm-Baugruppe, Rendering in Schrägansicht: Sockel, gebogener Oberarm, Handgelenk und geöffneter Zweifinger-Greifer" data-alt-en="Robotic arm assembly, rendering in three-quarter view: base, curved upper arm, wrist and opened two-finger gripper" style="display:block;width:100%;aspect-ratio:16 / 9;object-fit:cover;border-radius:10px" />
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h1 style="font-size:clamp(2.125rem,5vw,3.5rem);font-weight:600;line-height:1.04;letter-spacing:clamp(-0.84px,calc(0.61px - 0.1295vw),-0.27px);color:#000000;margin:0 0 24px;max-width:900px"><span data-lang="de">Roboterarm in Fusion 360</span><span data-lang="en">Robotic arm in Fusion 360</span></h1>
+<p style="font-size:clamp(1.0625rem,1.6vw,1.25rem);line-height:1.5;color:#262626;max-width:720px;margin:0"><span data-lang="de">Mehrachsiger Roboterarm mit Parallelgreifer, nach einem 2D-Zeichnungssatz von GECKO-CAD in Fusion 360 nachkonstruiert (02/2026 – 03/2026). Alle Einzelteile, die Baugruppe und die Renderings habe ich selbst erstellt.</span><span data-lang="en">Multi-axis robotic arm with parallel gripper, rebuilt in Fusion 360 from a 2D drawing set by GECKO-CAD (02/2026 – 03/2026). I created all parts, the assembly and the renderings myself.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Überblick &amp; Ziel</span><span data-lang="en">Overview &amp; aim</span></h2><p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Ein Roboterarm dieser Art bewegt einen Greifer über mehrere Drehachsen im Raum und setzt ihn gezielt an einer Position ab. Vorlage war ein Satz technischer 2D-Zeichnungen von GECKO-CAD, ursprünglich für SolidWorks erstellt.</span><span data-lang="en">A robotic arm of this kind moves a gripper through space over several rotary axes and places it precisely at a position. The template was a set of technical 2D drawings by GECKO-CAD, originally created for SolidWorks.</span></p><p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Ziel war, jedes Einzelteil allein aus den Zeichnungen in Fusion 360 nachzumodellieren, zu einer vollständigen Baugruppe zusammenzusetzen und zu rendern. Der Entwurf stammt von GECKO-CAD, meine Leistung ist die Umsetzung im CAD.</span><span data-lang="en">The aim was to remodel every part in Fusion 360 from the drawings alone, assemble them into a complete assembly and render them. The design is by GECKO-CAD; my contribution is the CAD implementation.</span></p><p style="max-width:720px;margin:0"><span data-lang="de">Der Arm wurde nicht gebaut. Es ist ein reines Konstruktionsprojekt.</span><span data-lang="en">The arm was not built. This is purely a CAD project.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Was ich gemacht habe</span><span data-lang="en">What I did</span></h2><ul style="margin:0;padding-left:1.1em;max-width:720px;display:grid;gap:8px">
+<li><span data-lang="de">Alle Einzelteile aus den 2D-Ansichten und Schnitten der Zeichnungen in Fusion 360 modelliert</span><span data-lang="en">Modelled every part in Fusion 360 from the 2D views and sections of the drawings</span></li>
+<li><span data-lang="de">Skizzen vollständig bemaßt, sodass sich einzelne Maße später ändern lassen, ohne das Teil neu aufzubauen</span><span data-lang="en">Fully dimensioned the sketches so individual dimensions can be changed later without rebuilding the part</span></li>
+<li><span data-lang="de">Die Teile zu einer Baugruppe zusammengesetzt: drehbare Basis, Schultergelenk, Oberarm, Unterarm, Handgelenk und Parallelgreifer</span><span data-lang="en">Assembled the parts: rotating base, shoulder joint, upper arm, forearm, wrist and parallel gripper</span></li>
+<li><span data-lang="de">Farbgebung wie in der Vorlage umgesetzt: Rot, Schwarz und Gold</span><span data-lang="en">Applied the colour scheme of the template: red, black and gold</span></li>
+<li><span data-lang="de">Renderings der Gesamtansicht und eine Explosionsansicht von Handgelenk und Greifer erstellt</span><span data-lang="en">Produced renderings of the overall view and an exploded view of wrist and gripper</span></li>
+</ul>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Herausforderungen &amp; Lösungen</span><span data-lang="en">Challenges &amp; solutions</span></h2><ul style="margin:0;padding-left:1.1em;max-width:720px;display:grid;gap:16px">
+<li><span data-lang="de"><strong style="font-weight:600;color:#000000">Detailreicher Greifer:</strong> Die Greiferbacken mit Verzahnung, Gelenkpunkten und dünnen Stegen waren das aufwendigste Teil. Ich habe zuerst die Grundkontur vollständig bestimmt skizziert und Zähne und Bohrungen erst danach als Muster ergänzt, sodass sich Änderungen sauber durch die Timeline ziehen.</span><span data-lang="en"><strong style="font-weight:600;color:#000000">Gripper full of detail:</strong> The gripper jaws with their teeth, pivot points and thin webs were the most demanding part. I first sketched the base contour as a fully constrained sketch and only then added teeth and holes as patterns, so changes propagate cleanly through the timeline.</span></li>
+<li><span data-lang="de"><strong style="font-weight:600;color:#000000">Beweglichkeit der Baugruppe:</strong> Nach dem ersten Zusammensetzen waren die Teile teils starr verbunden und die Gelenkbohrungen nicht exakt fluchtend. Ich habe jedes Gelenk als Drehgelenk um die jeweilige Stiftachse neu definiert und Bewegungsgrenzen gesetzt, damit sich der Arm kollisionsfrei durchbewegen lässt.</span><span data-lang="en"><strong style="font-weight:600;color:#000000">Mobility of the assembly:</strong> After the first assembly some parts were rigidly joined and the pivot holes were not exactly aligned. I redefined every joint as a revolute joint about its pin axis and set motion limits so the arm can be moved through its range without collisions.</span></li>
+</ul>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Bilder</span><span data-lang="en">Images</span></h2><figure style="margin:0 0 32px">
+<img src="assets/images/roboterarm-seite-16x9.png" alt="Rendering der Roboterarm-Baugruppe in Seitenansicht: schwarze Bodenplatte mit Standfüßen, drehbare Basis, Schultergelenk mit Lochkranz, gebogener Oberarm, Handgelenk und goldfarbener Parallelgreifer" data-alt-en="Rendering of the robotic arm assembly in side view: black base plate with feet, rotating base, shoulder joint with bolt circle, curved upper arm, wrist and gold-coloured parallel gripper" style="display:block;width:100%;aspect-ratio:16 / 9;object-fit:cover;border-radius:10px" />
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Seitenansicht: drehbare Basis mit Standfüßen, Schultergelenk mit Lochkranz, gebogener Oberarm.</span><span data-lang="en">Side view: rotating base with feet, shoulder joint with bolt circle, curved upper arm.</span></figcaption>
+</figure>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+<figure style="margin:0">
+<img src="assets/images/roboterarm-explosion-4x3.png" alt="Explosionsansicht: Unterarm, Handgelenksgehäuse, Adapter und Parallelgreifer voneinander abgesetzt, die Verbindungsstifte schweben zwischen den Teilen" data-alt-en="Exploded view: forearm, wrist housing, adapter and parallel gripper pulled apart, with the connecting pins floating between the parts" style="display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:10px" />
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Explosionsansicht: Handgelenk und Parallelgreifer zerlegt, Verbindungsstifte sichtbar.</span><span data-lang="en">Exploded view: wrist and parallel gripper taken apart, connecting pins visible.</span></figcaption>
+</figure>
+<figure style="margin:0">
+<img src="assets/images/roboterarm-viewport-4x3.png" alt="Fusion-360-Viewport mit der Baugruppe in Seitenansicht auf dunklem Raster, Gelenkachsen als Kreise markiert" data-alt-en="Fusion 360 viewport showing the assembly in side view on a dark grid, with the joint axes marked as circles" style="display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:10px" />
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Arbeitsstand im Fusion-360-Viewport.</span><span data-lang="en">Work in progress in the Fusion 360 viewport.</span></figcaption>
+</figure>
+</div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Was ich gelernt habe</span><span data-lang="en">What I learned</span></h2><p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Ein Nachbau nach Zeichnung zwingt dazu, jedes Maß bewusst zu lesen. Fehlt eine Angabe, muss sie aus einer anderen Ansicht oder aus dem Zusammenhang der Teile erschlossen werden.</span><span data-lang="en">Rebuilding from a drawing forces you to read every dimension deliberately. Where a value is missing, it has to be derived from another view or from how the parts fit together.</span></p><p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Die Zeichnung zeigt die Geometrie, aber nicht die Absicht dahinter. Beim Modellieren wird sichtbar, warum Wandstärken, Bohrungen und Anschlussmaße so gewählt sind, wie sie sind.</span><span data-lang="en">A drawing shows the geometry but not the intent behind it. Modelling makes it visible why wall thicknesses, holes and interface dimensions are chosen the way they are.</span></p><p style="max-width:720px;margin:0"><span data-lang="de">Vollständig bemaßte Skizzen zahlen sich spätestens beim Zusammensetzen aus: Passt ein Teil nicht, lässt sich das Maß ändern statt das Teil neu aufzubauen.</span><span data-lang="en">Fully dimensioned sketches pay off at the latest during assembly: if a part does not fit, the dimension can be changed instead of rebuilding the part.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:11px;line-height:1.4;letter-spacing:0.08em;text-transform:uppercase;color:#525252;margin:0 0 24px"><span data-lang="de">Credits</span><span data-lang="en">Credits</span></div>
+<p style="max-width:720px;margin:0"><span data-lang="de">Entwurf und Zeichnungssatz: GECKO-CAD, ursprünglich für SolidWorks erstellt. Die CAD-Umsetzung in Fusion 360, die Baugruppe und die Renderings stammen von mir.</span><span data-lang="en">Design and drawing set: GECKO-CAD, originally created for SolidWorks. The CAD implementation in Fusion 360, the assembly and the renderings are mine.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:11px;line-height:1.4;letter-spacing:0.08em;text-transform:uppercase;color:#525252;margin:0 0 24px"><span data-lang="de">Kompetenzen</span><span data-lang="en">Skills applied</span></div>
+<div style="max-width:720px;display:flex;flex-wrap:wrap;gap:8px">
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap">CAD</span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap">Fusion 360</span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Technisches Zeichnen</span><span data-lang="en">Technical drawing</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Baugruppen</span><span data-lang="en">Assemblies</span></span>
+</div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<nav style="border-top:1px solid #D4D4D4;padding-top:24px;display:flex;flex-wrap:wrap-reverse;gap:24px 32px">
+<a href="./fill-transfer-robot.dc.html" data-projnav="prev" style="flex:1 1 260px;min-width:0;display:block;text-decoration:none;text-align:left">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252"><span data-lang="de"><span data-projnav-arrow="1">←</span> Vorheriges Projekt</span><span data-lang="en"><span data-projnav-arrow="1">←</span> Previous project</span></span>
+<span data-projnav-title="1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;margin-top:8px;font-size:clamp(1.25rem,1.9vw,1.375rem);font-weight:500;line-height:1.3;color:#262626;overflow-wrap:anywhere;hyphens:auto"><span data-lang="de">Fill &amp; Transfer Robot</span><span data-lang="en">Fill &amp; Transfer Robot</span></span>
+</a>
+<a href="./ProjektPhasendiagramme.dc.html" data-projnav="next" style="flex:1 1 260px;min-width:0;display:block;text-decoration:none;text-align:right">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252"><span data-lang="de">Nächstes Projekt <span data-projnav-arrow="1">→</span></span><span data-lang="en">Next project <span data-projnav-arrow="1">→</span></span></span>
+<span data-projnav-title="1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;margin-top:8px;font-size:clamp(1.25rem,1.9vw,1.375rem);font-weight:500;line-height:1.3;color:#262626;overflow-wrap:anywhere;hyphens:auto"><span data-lang="de">Legierungszusammensetzung aus Abkühlkurven bestimmen</span><span data-lang="en">Determining alloy composition from cooling curves</span></span>
+</a>
+</nav>
+</section>
+</div>
+
+<footer style="background:#F7F7F7;margin-top:128px">
+<div style="max-width:1120px;margin:0 auto;padding:64px clamp(20px,5vw,80px);display:flex;flex-wrap:wrap;gap:32px 48px;justify-content:space-between;align-items:flex-start;font-family:'Archivo',system-ui,sans-serif">
+<div>
+<div style="font-size:20px;font-weight:500;letter-spacing:-0.01em;color:#262626">Julian Buscher</div>
+<div style="color:#525252;margin-top:8px"><span data-lang="de">Mechatronik · Universität Innsbruck &amp; UMIT TIROL</span><span data-lang="en">Mechatronics · University of Innsbruck &amp; UMIT TIROL</span></div>
+</div>
+<div style="display:grid;gap:8px">
+<a href="mailto:jul.buscher@gmail.com" style="color:#262626;text-decoration:none" style-hover="color:#000000">jul.buscher@gmail.com</a>
+<a href="https://www.linkedin.com/in/julian-buscher-a948b340a/" target="_blank" rel="noopener" style="color:#262626;text-decoration:none" style-hover="color:#000000">LinkedIn</a>
+<a href="assets/Julian-Buscher-Lebenslauf.pdf" target="_blank" rel="noopener" style="color:#262626;text-decoration:none" style-hover="color:#000000"><span data-lang="de">Lebenslauf</span><span data-lang="en">CV</span><span style="color:#737373">&#8239;↗</span></a>
+</div>
+<div style="display:grid;gap:8px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252">
+<span>© 2026 Julian Buscher</span>
+<span style="display:flex;flex-wrap:wrap;gap:8px"><a href="Impressum.dc.html" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#262626"><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></a><span aria-hidden="true">·</span><a href="Impressum.dc.html#datenschutz" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#262626"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a></span>
+</div>
+</div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { contactOpen: false };
+  renderVals() {
+    return {
+      contactOpen: this.state.contactOpen,
+      openContact: (e) => { e.preventDefault(); this.setState({ contactOpen: true }); },
+      closeContact: (e) => { e.preventDefault(); this.setState({ contactOpen: false }); },
+      stopClose: (e) => { e.stopPropagation(); }
+    };
+  }
+  componentDidMount() {
+    this.onEsc = (e) => { if (e.key === 'Escape' && this.state.contactOpen) this.setState({ contactOpen: false }); };
+    document.addEventListener('keydown', this.onEsc);
+  }
+  componentWillUnmount() { document.removeEventListener('keydown', this.onEsc); }
+}
+</script>
+</body>
+</html>

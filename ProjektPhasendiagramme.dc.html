@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Legierungszusammensetzung aus Abkühlkurven bestimmen – Julian Buscher">
+<meta property="og:description" content="Drei Blei-Zinn-Proben aufgeschmolzen, Abkühlkurven aufgezeichnet und aus Halte- und Knickpunkten die Zusammensetzung bestimmt. Auswertung in MATLAB.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julianbuscher.github.io/mein-portfolio/ProjektPhasendiagramme.dc.html">
+<meta property="og:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-phasenuebergaenge.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Abkühlkurven der Blei-Zinn-Proben">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-phasenuebergaenge.jpg">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Legierungszusammensetzung aus Abkühlkurven bestimmen – Julian Buscher</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="description" content="Drei Blei-Zinn-Proben aufgeschmolzen, Abkühlkurven aufgezeichnet und aus Halte- und Knickpunkten die Zusammensetzung bestimmt. Auswertung in MATLAB.">
+<meta name="jb-description-de" content="Drei Blei-Zinn-Proben aufgeschmolzen, Abkühlkurven aufgezeichnet und aus Halte- und Knickpunkten die Zusammensetzung bestimmt. Auswertung in MATLAB.">
+<meta name="jb-description-en" content="Three lead-tin specimens melted, cooling curves recorded, and the composition determined from arrests and inflection points. Evaluation in MATLAB.">
+<meta property="og:title" content="Legierungszusammensetzung aus Abkühlkurven bestimmen – Julian Buscher">
+<meta property="og:description" content="Drei Blei-Zinn-Proben aufgeschmolzen, Abkühlkurven aufgezeichnet und aus Halte- und Knickpunkten die Zusammensetzung bestimmt. Auswertung in MATLAB.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julianbuscher.github.io/mein-portfolio/ProjektPhasendiagramme.dc.html">
+<meta property="og:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-phasenuebergaenge.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Abkühlkurven der Blei-Zinn-Proben">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-phasenuebergaenge.jpg">
+<link rel="stylesheet" href="_ds/julian-buscher-design-system-ede0a14e-3dfb-44a3-85ff-4206c0e59416/styles.css">
+<style>body{margin:0;background:#FFFFFF}a{color:#C4410C}a:hover{color:#000000}
+@view-transition{navigation:auto}
+::view-transition-group(*){animation-duration:380ms;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}
+::view-transition-group(vt-media){animation-duration:420ms}
+::view-transition-group(vt-title){animation-duration:340ms}
+::view-transition-old(root){animation:jbOut 380ms cubic-bezier(0.32,0.72,0,1) both}
+::view-transition-new(root){animation:jbIn 380ms cubic-bezier(0.32,0.72,0,1) 100ms both}
+:focus-visible{outline:2px solid #E8500F;outline-offset:2px}
+[data-projnav-arrow]{display:inline-block;transition:transform 200ms cubic-bezier(0.32,0.72,0,1)}
+[data-projnav]:hover [data-projnav-title]{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+[data-projnav="prev"]:hover [data-projnav-arrow]{transform:translateX(-4px)}
+[data-projnav="next"]:hover [data-projnav-arrow]{transform:translateX(4px)}
+@media (max-width:640px){[data-projnav="next"]{text-align:left}}
+@media (max-width:639px){[data-rtable]{min-width:0!important}[data-rtable] thead{display:none}[data-rtable],[data-rtable] tbody,[data-rtable] tr,[data-rtable] td{display:block;width:100%;box-sizing:border-box}[data-rtable] tr{border:1px solid #D4D4D4;border-radius:10px;padding:16px;margin:0 0 16px}[data-rtable] td{border-bottom:0!important;padding:12px 0 0!important;overflow-wrap:anywhere}[data-rtable] td:first-child{padding-top:0!important;font-weight:600;color:#000000}[data-rtable] td::before{display:block;margin-bottom:4px;font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:600;color:#000000;letter-spacing:0}[data-rtable] td:first-child::before{display:inline;margin:0 6px 0 0}html[lang="de"] [data-rtable] td::before{content:attr(data-l-de)}html[lang="en"] [data-rtable] td::before{content:attr(data-l-en)}}
+@media (prefers-reduced-motion:reduce){[data-projnav-arrow]{transition:none}[data-projnav]:hover [data-projnav-arrow]{transform:none}}
+[data-press]{transition:background-color 120ms ease-out}
+[data-press]:active{background-color:#000000}
+@keyframes jbOut{to{opacity:0}}
+@keyframes jbIn{from{opacity:0}}
+@keyframes jbFadeOut{to{opacity:0}}
+@keyframes jbFadeIn{from{opacity:0}}
+::view-transition-image-pair(vt-media){isolation:none}
+::view-transition-old(vt-media),::view-transition-new(vt-media){animation:none;mix-blend-mode:normal;width:100%;height:100%;object-fit:cover}
+::view-transition-old(vt-title),::view-transition-new(vt-title){object-fit:contain;object-position:left top}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-group(vt-media),::view-transition-group(vt-title){animation-duration:150ms;animation-timing-function:linear}::view-transition-old(root){animation:jbFadeOut 150ms linear both}::view-transition-new(root){animation:jbFadeIn 150ms linear both}}
+@keyframes jbScrimIn{from{opacity:0}}
+@keyframes jbPanelIn{from{opacity:0;transform:scale(0.96)}}
+[data-press-soft]{transition:background-color 120ms ease-out}
+[data-press-soft]:active{background-color:#E5E5E5}
+[data-press-soft]{background-color:#F7F7F7}
+[data-press-soft]:hover{background-color:#EDEDED}
+[data-press-soft]:hover:active,[data-press-soft]:active{background-color:#E0E0E0 !important}
+[data-press-back]{background-color:#FFFFFF;transition:background-color 120ms ease-out,color 120ms ease-out}
+[data-press-back]:hover{background-color:#F7F7F7;color:#000000}
+[data-press-back]:hover:active,[data-press-back]:active{background-color:#EDEDED !important;color:#000000}</style>
+<script>
+(function(){function q(v){if(!v)return;['ready','finished','updateCallbackDone'].forEach(function(k){var p=v[k];if(p&&p['catch'])p['catch'](function(){});});}
+addEventListener('pagereveal',function(e){q(e.viewTransition);});
+addEventListener('pageswap',function(e){q(e.viewTransition);});
+addEventListener('unhandledrejection',function(e){var m=String((e.reason&&e.reason.message)||e.reason||'');if(m.indexOf('Transition was skipped')>-1)e.preventDefault();});})();
+</script>
+<script src="./i18n/lang.js"></script>
+<script src="./motion.js"></script>
+<style>@media (max-width:720px){header[data-jb-hdr]{flex-wrap:wrap!important;justify-content:center!important;row-gap:8px!important}header[data-jb-hdr]>[data-jb-hdr-spacer]{display:none!important}header[data-jb-hdr]>[data-jb-hdr-lang]{flex:0 0 100%!important;justify-content:center!important;order:2}}@media (max-width:480px){header[data-jb-hdr]{flex-wrap:nowrap!important;justify-content:space-between!important;padding:8px 10px!important;gap:8px!important}header[data-jb-hdr]>nav{flex-wrap:nowrap!important;gap:0!important;padding:4px!important;min-width:0}header[data-jb-hdr]>nav>a{font-size:clamp(12px,3.4vw,13px)!important;line-height:1.2!important;padding:5px 5px 4px!important;white-space:nowrap}header[data-jb-hdr]>nav>a:last-child{padding:5px 8px!important;margin-left:4px!important}header[data-jb-hdr]>[data-jb-hdr-lang]{flex:0 0 auto!important;order:0!important;justify-content:flex-end!important}header[data-jb-hdr]>[data-jb-hdr-lang] [role=group]{padding:2px!important}header[data-jb-hdr]>[data-jb-hdr-lang] button{font-size:12px!important;padding:6px 7px!important}}</style>
+<style>h1,h2,h3,h4{hyphens:auto;-webkit-hyphens:auto}</style>
+</helmet>
+<div style="font-family:'Archivo',system-ui,sans-serif;color:#262626;font-size:17px;line-height:1.6;background:#FFFFFF;padding-bottom:128px">
+
+<header data-jb-hdr="1" style="position:sticky;top:0;z-index:10;background:#FFFFFF;padding:16px clamp(20px,5vw,80px);display:flex;align-items:center;gap:16px"><span data-jb-hdr-spacer="1" style="flex:1 1 0;min-width:0"></span>
+<nav style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px;background:#F7F7F7;border:1px solid #D4D4D4;border-radius:999px;padding:8px 12px">
+<a href="./PortfolioWebsite.dc.html" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#525252" style-hover="color:#262626"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+<a href="./PortfolioWebsite.dc.html#projekte" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#000000"><span data-lang="de" style="padding-bottom:2px;border-bottom:2px solid #000000">Projekte</span><span data-lang="en" style="padding-bottom:2px;border-bottom:2px solid #000000">Projects</span></a>
+<a href="./PortfolioWebsite.dc.html#ueber-mich" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#525252" style-hover="color:#262626"><span data-lang="de">Über mich</span><span data-lang="en">About</span></a>
+<a href="#kontakt" onClick="{{ openContact }}" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 16px;border-radius:999px;background:#262626;color:#FFFFFF;margin-left:8px" style-hover="background:#000000"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></a>
+</nav>
+<sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeContact }}" style="position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.32);display:flex;align-items:center;justify-content:center;padding:24px;overflow-y:auto;animation:jbScrimIn 200ms ease-out both">
+<div onClick="{{ stopClose }}" style="background:#FFFFFF;border-radius:10px;width:100%;max-width:420px;text-align:left;padding:24px;max-height:calc(100vh - 48px);overflow-y:auto;flex:0 0 auto;box-shadow:0 1px 2px rgba(0,0,0,.06), 0 18px 48px rgba(0,0,0,.14);animation:jbPanelIn 280ms cubic-bezier(0.32,0.72,0,1) both">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+<div style="font-size:34px;font-weight:600;line-height:1.04;letter-spacing:-0.012em;color:#000000"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></div>
+<a href="#kontakt" onClick="{{ closeContact }}" style="display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#262626;text-decoration:none;padding:6px 14px 6px 11px;border-radius:999px;border:1px solid #D4D4D4" data-press-back="1"><span style="font-size:14px;line-height:1">←</span><span data-lang="de">Zurück</span><span data-lang="en">Back</span></a>
+</div>
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252;margin-top:8px"><span data-lang="de">Innsbruck, Österreich</span><span data-lang="en">Innsbruck, Austria</span></div>
+<div style="display:grid;gap:8px;margin-top:32px">
+<a href="mailto:jul.buscher@gmail.com" target="_top" style="display:grid;gap:4px;padding:14px 16px;border-radius:10px;text-decoration:none" data-press-soft="1">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252">E-Mail</span>
+<span style="font-size:17px;font-weight:500;color:#000000;word-break:break-all">jul.buscher@gmail.com</span>
+</a>
+<a href="https://www.linkedin.com/in/julian-buscher-a948b340a/" target="_blank" rel="noopener noreferrer" style="display:grid;gap:4px;padding:14px 16px;border-radius:10px;text-decoration:none" data-press-soft="1">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252">LinkedIn</span>
+<span style="font-size:17px;font-weight:500;color:#000000"><span data-lang="de">Profil öffnen</span><span data-lang="en">Open profile</span></span>
+</a>
+</div>
+</div>
+</div>
+</sc-if>
+<div data-jb-hdr-lang="1" style="flex:1 1 0;min-width:0;display:flex;justify-content:flex-end">
+<div role="group" aria-label="Sprache / Language" style="display:flex;gap:2px;background:#F7F7F7;border:1px solid #D4D4D4;border-radius:999px;padding:4px">
+<button type="button" data-lang-switch="de" aria-pressed="true" style="font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:500;line-height:1;padding:8px 12px;border:0;border-radius:999px;cursor:pointer">DE</button>
+<button type="button" data-lang-switch="en" aria-pressed="false" style="font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:500;line-height:1;padding:8px 12px;border:0;border-radius:999px;cursor:pointer">EN</button>
+</div>
+</div>
+</header>
+
+<div style="max-width:1120px;margin:0 auto;padding:24px clamp(20px,5vw,80px) 0">
+<a href="./PortfolioWebsite.dc.html#projekte" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#000000"><span data-lang="de">← Zurück zu den Projekten</span><span data-lang="en">← Back to projects</span></a>
+</div>
+
+<section style="max-width:1440px;margin:32px auto 0;padding:0 clamp(20px,5vw,80px)">
+<img src="assets/images/abkuehlkurven-phasenuebergaenge.png?v=2" alt="Drei überlagerte Abkühlkurven der Pb-Sn-Proben, Temperatur über der Zeit von 400 °C auf Raumtemperatur" data-alt-en="Three overlaid cooling curves of the Pb-Sn specimens, temperature over time from 400 °C down to room temperature" style="display:block;width:100%;height:auto;border-radius:10px;background:#FFFFFF" />
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h1 style="font-size:clamp(2.125rem,5vw,3.5rem);font-weight:600;line-height:1.04;letter-spacing:clamp(-0.84px,calc(0.61px - 0.1295vw),-0.27px);color:#000000;margin:0 0 24px;max-width:900px"><span data-lang="de">Legierungs&shy;zusammensetzung aus Abkühlkurven bestimmen</span><span data-lang="en">Determining alloy composition from cooling curves</span></h1>
+<p style="font-size:clamp(1.0625rem,1.6vw,1.25rem);line-height:1.5;color:#262626;max-width:720px;margin:0"><span data-lang="de">Drei Blei-Zinn-Proben aufgeschmolzen, beim Abkühlen den Temperaturverlauf mit Thermoelement und Datenlogger aufgezeichnet und aus Halte- und Knickpunkten die Zusammensetzung bestimmt, im Kurs Materialtechnologie 2 an der Universität Innsbruck &amp; UMIT TIROL (06/2026). Auswertung und Darstellung habe ich in MATLAB umgesetzt und den Bericht verfasst.</span><span data-lang="en">Three lead-tin specimens melted, the temperature recorded with a thermocouple and data logger while they cooled, and the composition determined from the arrests and inflection points, in the Materials Technology 2 course at the University of Innsbruck &amp; UMIT TIROL (06/2026). I implemented the evaluation and the plots in MATLAB and wrote the report.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Aufgabe &amp; Anforderungen</span><span data-lang="en">Task &amp; requirements</span></h2>
+<p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Beim Erstarren einer Legierung wird latente Wärme frei. In der Abkühlkurve zeigt sich das als Plateau oder Knick. Aus der Lage dieser Punkte lässt sich über das Phasendiagramm auf die Zusammensetzung schließen.</span><span data-lang="en">Latent heat is released when an alloy solidifies. In the cooling curve this shows up as a plateau or an inflection point. From the position of these points the composition can be inferred using the phase diagram.</span></p>
+<p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Ziel des Versuchs:</span><span data-lang="en">Aim of the experiment:</span></p>
+<ul style="margin:0;padding-left:1.1em;max-width:720px;display:grid;gap:8px">
+<li><span data-lang="de">Abkühlkurven von drei Pb-Sn-Proben aufnehmen</span><span data-lang="en">record cooling curves of three Pb-Sn specimens</span></li>
+<li><span data-lang="de">Liquidus-, Halte- und Solidustemperaturen bestimmen</span><span data-lang="en">determine liquidus, arrest and solidus temperatures</span></li>
+<li><span data-lang="de">die Proben im Pb-Sn-Phasendiagramm zuordnen</span><span data-lang="en">locate the specimens in the Pb-Sn phase diagram</span></li>
+</ul>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:11px;line-height:1.4;letter-spacing:0.08em;text-transform:uppercase;color:#525252;margin:0 0 24px"><span data-lang="de">Mein Anteil</span><span data-lang="en">My contribution</span></div>
+<div style="max-width:900px;border-bottom:1px solid #D4D4D4">
+<div style="display:flex;flex-wrap:wrap;gap:4px 32px;padding:16px 0;border-top:1px solid #D4D4D4">
+<div style="flex:0 0 200px;font-weight:500;color:#000000"><span data-lang="de">Selbst umgesetzt</span><span data-lang="en">Built by me</span></div>
+<div style="flex:1 1 320px;min-width:0;color:#525252">
+<ul style="margin:0;padding-left:1.1em;display:grid;gap:8px">
+<li><span data-lang="de">Auswertung der Rohdaten in MATLAB</span><span data-lang="en">Evaluation of the raw data in MATLAB</span></li>
+<li><span data-lang="de">Alle Plots</span><span data-lang="en">All plots</span></li>
+<li><span data-lang="de">Bestimmung der charakteristischen Temperaturen</span><span data-lang="en">Determination of the characteristic temperatures</span></li>
+<li><span data-lang="de">Zuordnung im Phasendiagramm</span><span data-lang="en">Assignment in the phase diagram</span></li>
+<li><span data-lang="de">Laborbericht</span><span data-lang="en">Lab report</span></li>
+</ul>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 32px;padding:16px 0;border-top:1px solid #D4D4D4">
+<div style="flex:0 0 200px;font-weight:500;color:#000000"><span data-lang="de">Vorhanden</span><span data-lang="en">Already available</span></div>
+<div style="flex:1 1 320px;min-width:0;color:#525252"><span data-lang="de">Proben, Kammerofen, Thermoelement und Datenlogger</span><span data-lang="en">Specimens, chamber furnace, thermocouple and data logger</span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 32px;max-width:720px"><span data-lang="de">Technische Umsetzung</span><span data-lang="en">Technical implementation</span></h2>
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.2;letter-spacing:-0.005em;color:#000000;margin:0 0 16px"><span data-lang="de">Messung</span><span data-lang="en">Measurement</span></h3>
+<p style="max-width:720px;margin:0 0 48px"><span data-lang="de">Die Proben wurden in Keramiktiegeln im Kammerofen bei rund 400 °C aufgeschmolzen. Ein Thermoelement direkt in der Schmelze zeichnete den Temperaturverlauf beim Abkühlen an Luft auf.</span><span data-lang="en">The specimens were melted in ceramic crucibles in a chamber furnace at around 400 °C. A thermocouple placed directly in the melt recorded the temperature while it cooled in air.</span></p>
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.2;letter-spacing:-0.005em;color:#000000;margin:0 0 16px"><span data-lang="de">Auswertung</span><span data-lang="en">Evaluation</span></h3>
+<p style="max-width:720px;margin:0 0 32px"><span data-lang="de">Die drei Kurven habe ich in MATLAB zuerst überlagert, um die Bereiche mit Phasenumwandlungen zu erkennen, und anschließend einzeln ausgewertet. Ein Plateau entsteht, wenn die Schmelze bei konstanter Temperatur erstarrt, wie bei reinen Metallen und beim Eutektikum. Ein Knick markiert den Erstarrungsbeginn einer Legierung.</span><span data-lang="en">In MATLAB I first overlaid the three curves to identify the regions with phase transformations, then evaluated each curve on its own. A plateau appears when the melt solidifies at constant temperature, as with pure metals and at the eutectic. An inflection point marks the onset of solidification of an alloy.</span></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin:0 0 32px">
+<figure style="margin:0">
+<img src="assets/images/abkuehlkurve-messung1-4x3.png?v=2" alt="Abkühlkurve der Messung 1 mit Haltepunkt bei rund 234 °C" data-alt-en="Cooling curve of measurement 1 with an arrest at around 234 °C" style="display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:10px" />
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Messung 1: Plateau bei ca. 234 °C</span><span data-lang="en">Measurement 1: plateau at approx. 234 °C</span></figcaption>
+</figure>
+<figure style="margin:0">
+<img src="assets/images/abkuehlkurve-messung2-4x3.png?v=2" alt="Abkühlkurve der Messung 2 mit Haltepunkt bei rund 329 °C" data-alt-en="Cooling curve of measurement 2 with an arrest point at around 329 °C" style="display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:10px" />
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Messung 2: Plateau bei ca. 329 °C</span><span data-lang="en">Measurement 2: plateau at approx. 329 °C</span></figcaption>
+</figure>
+<figure style="margin:0">
+<img src="assets/images/abkuehlkurve-messung3-4x3.png?v=2" alt="Abkühlkurve der Messung 3 mit Knick bei rund 209 °C und Haltepunkt bei rund 185 °C" data-alt-en="Cooling curve of measurement 3 with an inflection point at around 209 °C and an arrest at around 185 °C" style="display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:10px" />
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Messung 3: Knick bei ca. 209 °C, Plateau bei ca. 185 °C</span><span data-lang="en">Measurement 3: inflection at approx. 209 °C, plateau at approx. 185 °C</span></figcaption>
+</figure>
+</div>
+<figure style="margin:0 auto;width:100%;max-width:539px">
+<svg viewBox="0 0 600 450" role="img" aria-label="Pb-Sn-Phasendiagramm, schematisch: Liquidus-, Solidus-, Löslichkeits- und eutektikale Linie; Referenzpunkte Pb 327,5 °C, Sn 231,9 °C und Eutektikum 183 °C bei 61,9 Ma.-% Sn" style="display:block;width:100%;height:auto;background:#FFFFFF;border-radius:10px;font-family:'Archivo',system-ui,sans-serif">
+<g><line x1="70" y1="390" x2="570" y2="390" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="340" x2="570" y2="340" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="290" x2="570" y2="290" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="240" x2="570" y2="240" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="190" x2="570" y2="190" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="140" x2="570" y2="140" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="90" x2="570" y2="90" stroke="#EDEDED" stroke-width="1"></line><line x1="70" y1="40" x2="570" y2="40" stroke="#EDEDED" stroke-width="1"></line></g>
+<g font-size="14" fill="#525252"><text x="60" y="395" text-anchor="end">0</text><text x="60" y="345" text-anchor="end">50</text><text x="60" y="295" text-anchor="end">100</text><text x="60" y="245" text-anchor="end">150</text><text x="60" y="195" text-anchor="end">200</text><text x="60" y="145" text-anchor="end">250</text><text x="60" y="95" text-anchor="end">300</text><text x="60" y="45" text-anchor="end">350</text><text x="70" y="412" text-anchor="middle">0</text><text x="170" y="412" text-anchor="middle">20</text><text x="270" y="412" text-anchor="middle">40</text><text x="370" y="412" text-anchor="middle">60</text><text x="470" y="412" text-anchor="middle">80</text><text x="570" y="412" text-anchor="middle">100</text></g>
+<text x="320" y="442" text-anchor="middle" font-size="14" fill="#525252"><tspan data-lang="de">Sn [Ma.-%]</tspan><tspan data-lang="en">Sn [wt%]</tspan></text>
+<text transform="translate(18 215) rotate(-90)" text-anchor="middle" font-size="14" fill="#525252"><tspan data-lang="de">Temperatur [°C]</tspan><tspan data-lang="en">Temperature [°C]</tspan></text>
+<g fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<polyline points="70,62.5 379.5,207 570,158.1"></polyline>
+<line x1="165" y1="207" x2="557.5" y2="207"></line>
+<polyline points="70,62.5 165,207"></polyline>
+<polyline points="570,158.1 557.5,207"></polyline>
+<path d="M 165,207 Q 145,300 80,370"></path>
+<path d="M 557.5,207 Q 563,300 565,370"></path>
+</g>
+<g fill="#E8500F"><circle cx="70" cy="62.5" r="4"></circle><circle cx="570" cy="158.1" r="4"></circle><circle cx="379.5" cy="207" r="4"></circle></g>
+<text x="80" y="54" font-family="'Fragment Mono',ui-monospace,monospace" font-size="13" letter-spacing="0.26" fill="#262626"><tspan data-lang="de">Pb 327,5 °C</tspan><tspan data-lang="en">Pb 327.5 °C</tspan></text>
+<text x="560" y="146" text-anchor="end" font-family="'Fragment Mono',ui-monospace,monospace" font-size="13" letter-spacing="0.26" fill="#262626"><tspan data-lang="de">Sn 231,9 °C</tspan><tspan data-lang="en">Sn 231.9 °C</tspan></text>
+<text x="379.5" y="227" text-anchor="middle" font-family="'Fragment Mono',ui-monospace,monospace" font-size="13" letter-spacing="0.26" fill="#262626"><tspan data-lang="de">Eutektikum 183 °C · 61,9 %</tspan><tspan data-lang="en">Eutectic 183 °C · 61.9 %</tspan></text>
+<g font-size="16" fill="#262626" text-anchor="middle">
+<text x="220" y="90">L</text>
+<text x="175" y="145">α + L</text>
+<text x="510" y="198" font-size="14">β + L</text>
+<text x="95" y="270">α</text>
+<text x="536" y="295" text-anchor="end">β</text>
+<line x1="541" y1="290" x2="567" y2="290" stroke="#525252" stroke-width="1"></line>
+<text x="345" y="290">α + β</text>
+</g>
+</svg>
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Pb-Sn-Phasendiagramm, schematisch nach Literaturwerten, mit den Referenzpunkten für die Zuordnung der Proben.</span><span data-lang="en">Pb-Sn phase diagram, schematic, based on literature values, with the reference points used to identify the specimens.</span></figcaption>
+</figure>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 32px;max-width:720px"><span data-lang="de">Ergebnisse</span><span data-lang="en">Results</span></h2>
+<div style="overflow-x:auto;max-width:100%">
+<table data-rtable="1" style="border-collapse:collapse;width:100%;min-width:520px;font-size:17px">
+<thead>
+<tr>
+<th style="text-align:left;font-weight:600;color:#000000;border-bottom:1px solid #D4D4D4;padding:12px 16px 12px 0"><span data-lang="de">Probe</span><span data-lang="en">Specimen</span></th>
+<th style="text-align:left;font-weight:600;color:#000000;border-bottom:1px solid #D4D4D4;padding:12px 16px"><span data-lang="de">Gemessen</span><span data-lang="en">Measured</span></th>
+<th style="text-align:left;font-weight:600;color:#000000;border-bottom:1px solid #D4D4D4;padding:12px 16px"><span data-lang="de">Referenz</span><span data-lang="en">Reference</span></th>
+<th style="text-align:left;font-weight:600;color:#000000;border-bottom:1px solid #D4D4D4;padding:12px 0 12px 16px"><span data-lang="de">Zuordnung</span><span data-lang="en">Identified as</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l-de="Probe" data-l-en="Specimen" style="border-bottom:1px solid #D4D4D4;padding:12px 16px 12px 0;color:#262626">1</td>
+<td data-l-de="Gemessen" data-l-en="Measured" style="border-bottom:1px solid #D4D4D4;padding:12px 16px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;color:#262626"><span data-lang="de">Plateau ca. 234 °C</span><span data-lang="en">plateau approx. 234 °C</span></td>
+<td data-l-de="Referenz" data-l-en="Reference" style="border-bottom:1px solid #D4D4D4;padding:12px 16px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;color:#262626"><span data-lang="de">Sn: 231,9 °C</span><span data-lang="en">Sn: 231.9 °C</span></td>
+<td data-l-de="Zuordnung" data-l-en="Identified as" style="border-bottom:1px solid #D4D4D4;padding:12px 0 12px 16px;color:#262626"><span data-lang="de">nahezu reines Zinn</span><span data-lang="en">almost pure tin</span></td>
+</tr>
+<tr>
+<td data-l-de="Probe" data-l-en="Specimen" style="border-bottom:1px solid #D4D4D4;padding:12px 16px 12px 0;color:#262626">2</td>
+<td data-l-de="Gemessen" data-l-en="Measured" style="border-bottom:1px solid #D4D4D4;padding:12px 16px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;color:#262626"><span data-lang="de">Plateau ca. 329 °C</span><span data-lang="en">plateau approx. 329 °C</span></td>
+<td data-l-de="Referenz" data-l-en="Reference" style="border-bottom:1px solid #D4D4D4;padding:12px 16px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;color:#262626"><span data-lang="de">Pb: 327,5 °C</span><span data-lang="en">Pb: 327.5 °C</span></td>
+<td data-l-de="Zuordnung" data-l-en="Identified as" style="border-bottom:1px solid #D4D4D4;padding:12px 0 12px 16px;color:#262626"><span data-lang="de">nahezu reines Blei</span><span data-lang="en">almost pure lead</span></td>
+</tr>
+<tr>
+<td data-l-de="Probe" data-l-en="Specimen" style="border-bottom:1px solid #D4D4D4;padding:12px 16px 12px 0;color:#262626">3</td>
+<td data-l-de="Gemessen" data-l-en="Measured" style="border-bottom:1px solid #D4D4D4;padding:12px 16px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;color:#262626"><span data-lang="de">Knick ca. 209 °C, Plateau ca. 185 °C</span><span data-lang="en">inflection approx. 209 °C, plateau approx. 185 °C</span></td>
+<td data-l-de="Referenz" data-l-en="Reference" style="border-bottom:1px solid #D4D4D4;padding:12px 16px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;color:#262626"><span data-lang="de">Eutektikum: 183 °C</span><span data-lang="en">eutectic: 183 °C</span></td>
+<td data-l-de="Zuordnung" data-l-en="Identified as" style="border-bottom:1px solid #D4D4D4;padding:12px 0 12px 16px;color:#262626"><span data-lang="de">untereutektisch (ca. 50 Ma.-% Sn) oder übereutektisch (ca. 80 Ma.-% Sn), aus der Kurve allein nicht eindeutig</span><span data-lang="en">hypoeutectic (approx. 50 wt% Sn) or hypereutectic (approx. 80 wt% Sn), not distinguishable from the curve alone</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Erkenntnisse</span><span data-lang="en">What I took away</span></h2>
+<p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Alle drei Haltepunkte liegen etwa 1,5 bis 2 °C über den Literaturwerten. Das deutet auf einen kleinen, gleichmäßigen positiven Offset des Thermoelements hin, ist mit drei Punkten aber nicht belastbar. Eine Kalibrierung an einer Reinmetallprobe vor der Messung würde das klären.</span><span data-lang="en">All three arrest points lie about 1.5 to 2 °C above the literature values. This points to a small, consistent positive offset of the thermocouple, but three points are not enough to confirm it. Calibrating against a pure-metal sample before measuring would settle this.</span></p>
+<p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Ein einzelner Liquidus-Knick lässt bei Probe 3 zwei Zusammensetzungen zu, eine auf jeder Seite des Eutektikums. Unterscheiden lassen sich beide über die Dauer des eutektischen Haltepunkts oder einen Schliff.</span><span data-lang="en">For specimen 3 a single liquidus inflection allows two compositions, one on each side of the eutectic. The two can be told apart by the duration of the eutectic arrest or by a metallographic section.</span></p>
+<p style="max-width:720px;margin:0"><span data-lang="de">Die charakteristischen Punkte habe ich per Augenmaß bestimmt. Eine Auswertung über die Ableitung dT/dt in MATLAB würde sie reproduzierbar machen.</span><span data-lang="en">I determined the characteristic points by eye. Evaluating them from the derivative dT/dt in MATLAB would make them reproducible.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:11px;line-height:1.4;letter-spacing:0.08em;text-transform:uppercase;color:#525252;margin:0 0 24px"><span data-lang="de">Kompetenzen</span><span data-lang="en">Skills applied</span></div>
+<div style="max-width:720px;display:flex;flex-wrap:wrap;gap:8px">
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Messtechnik</span><span data-lang="en">Measurement</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Werkstoffkunde</span><span data-lang="en">Materials science</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap">MATLAB</span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Datenauswertung</span><span data-lang="en">Data analysis</span></span>
+</div>
+</section>
+
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<nav style="border-top:1px solid #D4D4D4;padding-top:24px;display:flex;flex-wrap:wrap-reverse;gap:24px 32px">
+<a href="./ProjektRoboterarm.dc.html" data-projnav="prev" style="flex:1 1 260px;min-width:0;display:block;text-decoration:none;text-align:left">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252"><span data-lang="de"><span data-projnav-arrow="1">←</span> Vorheriges Projekt</span><span data-lang="en"><span data-projnav-arrow="1">←</span> Previous project</span></span>
+<span data-projnav-title="1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;margin-top:8px;font-size:clamp(1.25rem,1.9vw,1.375rem);font-weight:500;line-height:1.3;color:#262626;overflow-wrap:anywhere;hyphens:auto"><span data-lang="de">Roboterarm in Fusion 360</span><span data-lang="en">Robotic arm in Fusion 360</span></span>
+</a>
+<a href="./ProjektZugversuch.dc.html" data-projnav="next" style="flex:1 1 260px;min-width:0;display:block;text-decoration:none;text-align:right">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252"><span data-lang="de">Nächstes Projekt <span data-projnav-arrow="1">→</span></span><span data-lang="en">Next project <span data-projnav-arrow="1">→</span></span></span>
+<span data-projnav-title="1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;margin-top:8px;font-size:clamp(1.25rem,1.9vw,1.375rem);font-weight:500;line-height:1.3;color:#262626;overflow-wrap:anywhere;hyphens:auto"><span data-lang="de">Bruchverhalten von Werkstoffen im Zugversuch</span><span data-lang="en">Fracture behaviour of materials in tensile testing</span></span>
+</a>
+</nav>
+</section>
+</div>
+
+<footer style="background:#F7F7F7;margin-top:128px">
+<div style="max-width:1120px;margin:0 auto;padding:64px clamp(20px,5vw,80px);display:flex;flex-wrap:wrap;gap:32px 48px;justify-content:space-between;align-items:flex-start;font-family:'Archivo',system-ui,sans-serif">
+<div>
+<div style="font-size:20px;font-weight:500;letter-spacing:-0.01em;color:#262626">Julian Buscher</div>
+<div style="color:#525252;margin-top:8px"><span data-lang="de">Mechatronik · Universität Innsbruck &amp; UMIT TIROL</span><span data-lang="en">Mechatronics · University of Innsbruck &amp; UMIT TIROL</span></div>
+</div>
+<div style="display:grid;gap:8px">
+<a href="mailto:jul.buscher@gmail.com" style="color:#262626;text-decoration:none" style-hover="color:#000000">jul.buscher@gmail.com</a>
+<a href="https://www.linkedin.com/in/julian-buscher-a948b340a/" target="_blank" rel="noopener" style="color:#262626;text-decoration:none" style-hover="color:#000000">LinkedIn</a>
+<a href="assets/Julian-Buscher-Lebenslauf.pdf" target="_blank" rel="noopener" style="color:#262626;text-decoration:none" style-hover="color:#000000"><span data-lang="de">Lebenslauf</span><span data-lang="en">CV</span><span style="color:#737373">&#8239;↗</span></a>
+</div>
+<div style="display:grid;gap:8px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252">
+<span>© 2026 Julian Buscher</span>
+<span style="display:flex;flex-wrap:wrap;gap:8px"><a href="Impressum.dc.html" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#262626"><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></a><span aria-hidden="true">·</span><a href="Impressum.dc.html#datenschutz" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#262626"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a></span>
+</div>
+</div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { contactOpen: false };
+  renderVals() {
+    return {
+      contactOpen: this.state.contactOpen,
+      openContact: (e) => { e.preventDefault(); this.setState({ contactOpen: true }); },
+      closeContact: (e) => { e.preventDefault(); this.setState({ contactOpen: false }); },
+      stopClose: (e) => { e.stopPropagation(); }
+    };
+  }
+  componentDidMount() {
+    this.onEsc = (e) => { if (e.key === 'Escape' && this.state.contactOpen) this.setState({ contactOpen: false }); };
+    document.addEventListener('keydown', this.onEsc);
+  }
+  componentWillUnmount() { document.removeEventListener('keydown', this.onEsc); }
+}
+</script>
+</body>
+</html>

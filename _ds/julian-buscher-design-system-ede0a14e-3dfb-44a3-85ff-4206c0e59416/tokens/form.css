@@ -1,0 +1,20 @@
+/* Form — §6.4. Ein Radius, ein Schatten, ein Rahmen. */
+:root {
+  --radius: 10px;
+  --radius-pill: 999px;
+  --radius-flat: 0px;
+
+  --border-width: 1px; /* @kind spacing */
+  --border: var(--border-width) solid var(--line);
+
+  --shadow-none: none;
+  --shadow-hover: 0 1px 2px rgba(0, 0, 0, .06), 0 6px 16px rgba(0, 0, 0, .06);
+
+  --focus-ring-width: 2px;  /* @kind spacing */
+  --focus-ring-offset: 2px; /* @kind spacing */
+
+  /* Bewegung: nur Kachel-Hover (§8). Sonst keine Animation. */
+  --motion-duration: 200ms;   /* @kind other */
+  --motion-easing: ease-out;  /* @kind other */
+  --hover-image-scale: 1.02;  /* @kind other */
+}

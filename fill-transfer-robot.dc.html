@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Fill &amp; Transfer Robot – Automatisiertes Dosiersystem für Laborplatten">
+<meta property="og:description" content="Fill &amp; Transfer Robot, automatisiertes Dosiersystem für Laborplatten. Umbau einer 3018-CNC-Fräse für 96-Well-Platten: 3D-gedruckte Mechanik, Pumpensteuerung, Python-Software und gravimetrische Kalibrierung.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julianbuscher.github.io/mein-portfolio/fill-transfer-robot.dc.html">
+<meta property="og:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-cnc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fill &amp; Transfer Robot – automatisiertes Dosiersystem für Laborplatten">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-cnc.jpg">
+<script>
+(function(){function q(v){if(!v)return;['ready','finished','updateCallbackDone'].forEach(function(k){var p=v[k];if(p&&p['catch'])p['catch'](function(){});});}
+addEventListener('pagereveal',function(e){q(e.viewTransition);});
+addEventListener('pageswap',function(e){q(e.viewTransition);});
+addEventListener('unhandledrejection',function(e){var m=String((e.reason&&e.reason.message)||e.reason||'');if(m.indexOf('Transition was skipped')>-1)e.preventDefault();});})();
+</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Fill &amp; Transfer Robot – Automatisiertes Dosiersystem für Laborplatten – Julian Buscher</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="description" content="Fill &amp; Transfer Robot, automatisiertes Dosiersystem für Laborplatten. Umbau einer 3018-CNC-Fräse für 96-Well-Platten: 3D-gedruckte Mechanik, Pumpensteuerung, Python-Software und gravimetrische Kalibrierung.">
+<meta name="jb-description-de" content="Fill &amp; Transfer Robot, automatisiertes Dosiersystem für Laborplatten. Umbau einer 3018-CNC-Fräse für 96-Well-Platten: 3D-gedruckte Mechanik, Pumpensteuerung, Python-Software und gravimetrische Kalibrierung.">
+<meta name="jb-description-en" content="Fill &amp; Transfer Robot, an automated dispensing system for lab plates. A 3018 CNC router converted for 96-well plates: 3D-printed mechanics, pump control, Python software and gravimetric calibration.">
+<meta property="og:title" content="Fill &amp; Transfer Robot – Automatisiertes Dosiersystem für Laborplatten">
+<meta property="og:description" content="Fill &amp; Transfer Robot, automatisiertes Dosiersystem für Laborplatten. Umbau einer 3018-CNC-Fräse für 96-Well-Platten: 3D-gedruckte Mechanik, Pumpensteuerung, Python-Software und gravimetrische Kalibrierung.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julianbuscher.github.io/mein-portfolio/fill-transfer-robot.dc.html">
+<meta property="og:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-cnc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fill &amp; Transfer Robot – automatisiertes Dosiersystem für Laborplatten">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julianbuscher.github.io/mein-portfolio/assets/images/og-cnc.jpg">
+<link rel="stylesheet" href="_ds/julian-buscher-design-system-ede0a14e-3dfb-44a3-85ff-4206c0e59416/styles.css">
+<style>body{margin:0;background:#FFFFFF}a{color:#C4410C}a:hover{color:#000000}
+@view-transition{navigation:auto}
+::view-transition-group(*){animation-duration:380ms;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}
+::view-transition-group(vt-media){animation-duration:420ms}
+::view-transition-group(vt-title){animation-duration:340ms}
+::view-transition-old(root){animation:jbOut 380ms cubic-bezier(0.32,0.72,0,1) both}
+::view-transition-new(root){animation:jbIn 380ms cubic-bezier(0.32,0.72,0,1) 100ms both}
+:focus-visible{outline:2px solid #E8500F;outline-offset:2px}
+[data-projnav-arrow]{display:inline-block;transition:transform 200ms cubic-bezier(0.32,0.72,0,1)}
+[data-projnav]:hover [data-projnav-title]{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+[data-projnav="prev"]:hover [data-projnav-arrow]{transform:translateX(-4px)}
+[data-projnav="next"]:hover [data-projnav-arrow]{transform:translateX(4px)}
+@media (max-width:640px){[data-projnav="next"]{text-align:left}}
+@media (prefers-reduced-motion:reduce){[data-projnav-arrow]{transition:none}[data-projnav]:hover [data-projnav-arrow]{transform:none}}
+a[data-tile]{transition:box-shadow 200ms cubic-bezier(0.32,0.72,0,1),transform 200ms cubic-bezier(0.32,0.72,0,1),background-color 120ms ease-out}
+a[data-tile] img{transition:transform 200ms ease-out}
+a[data-tile]:hover{box-shadow:0 1px 2px rgba(0,0,0,.06),0 6px 16px rgba(0,0,0,.06);transform:translateY(-4px)}
+a[data-tile]:hover img{transform:scale(1.02)}
+a[data-tile]:active{background-color:#F7F7F7;transform:translateY(-1px);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+a[data-tile]:active img{transform:scale(1.005)}
+[data-press]{transition:background-color 120ms ease-out}
+[data-press]:active{background-color:#000000}
+[data-press-soft]{transition:background-color 120ms ease-out}
+[data-press-soft]:active{background-color:#E5E5E5}
+@keyframes jbScrimIn{from{opacity:0}}
+@keyframes jbPanelIn{from{opacity:0;transform:scale(0.96)}}
+@media (prefers-reduced-motion:reduce){a[data-tile],a[data-tile] img{transition:none}a[data-tile]:hover,a[data-tile]:active{transform:none}a[data-tile]:hover img,a[data-tile]:active img{transform:none}}
+@keyframes jbOut{to{opacity:0}}
+@keyframes jbIn{from{opacity:0}}
+@keyframes jbFadeOut{to{opacity:0}}
+@keyframes jbFadeIn{from{opacity:0}}
+::view-transition-image-pair(vt-media){isolation:none}
+::view-transition-old(vt-media),::view-transition-new(vt-media){animation:none;mix-blend-mode:normal;width:100%;height:100%;object-fit:cover}
+::view-transition-old(vt-title),::view-transition-new(vt-title){object-fit:contain;object-position:left top}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-group(vt-media),::view-transition-group(vt-title){animation-duration:150ms;animation-timing-function:linear}::view-transition-old(root){animation:jbFadeOut 150ms linear both}::view-transition-new(root){animation:jbFadeIn 150ms linear both}}
+[data-press-back]{background-color:#FFFFFF;transition:background-color 120ms ease-out,color 120ms ease-out}
+[data-press-back]:hover{background-color:#F7F7F7;color:#000000}
+[data-press-back]:hover:active,[data-press-back]:active{background-color:#EDEDED !important;color:#000000}
+[data-press-soft]{background-color:#F7F7F7}
+[data-press-soft]:hover{background-color:#EDEDED}
+[data-press-soft]:hover:active,[data-press-soft]:active{background-color:#E0E0E0 !important}</style>
+<script src="./i18n/lang.js"></script>
+<script src="./motion.js"></script>
+<style>
+@media (prefers-reduced-motion: reduce) { video[autoplay] { animation: none } }
+</style>
+<script>
+(function(){
+  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var stop = function(){
+    document.querySelectorAll('video[autoplay]').forEach(function(v){
+      v.autoplay = false; v.loop = false; v.removeAttribute('autoplay'); v.pause();
+      v.style.cursor = 'pointer';
+      v.addEventListener('click', function(){ v.loop = true; v.play(); }, { once: true });
+    });
+  };
+  stop();
+  document.addEventListener('DOMContentLoaded', stop);
+  setTimeout(stop, 1200);
+})();
+</script>
+<style>@media (max-width:720px){header[data-jb-hdr]{flex-wrap:wrap!important;justify-content:center!important;row-gap:8px!important}header[data-jb-hdr]>[data-jb-hdr-spacer]{display:none!important}header[data-jb-hdr]>[data-jb-hdr-lang]{flex:0 0 100%!important;justify-content:center!important;order:2}}@media (max-width:480px){header[data-jb-hdr]{flex-wrap:nowrap!important;justify-content:space-between!important;padding:8px 10px!important;gap:8px!important}header[data-jb-hdr]>nav{flex-wrap:nowrap!important;gap:0!important;padding:4px!important;min-width:0}header[data-jb-hdr]>nav>a{font-size:clamp(12px,3.4vw,13px)!important;line-height:1.2!important;padding:5px 5px 4px!important;white-space:nowrap}header[data-jb-hdr]>nav>a:last-child{padding:5px 8px!important;margin-left:4px!important}header[data-jb-hdr]>[data-jb-hdr-lang]{flex:0 0 auto!important;order:0!important;justify-content:flex-end!important}header[data-jb-hdr]>[data-jb-hdr-lang] [role=group]{padding:2px!important}header[data-jb-hdr]>[data-jb-hdr-lang] button{font-size:12px!important;padding:6px 7px!important}}</style>
+</helmet>
+<div style="font-family:'Archivo',system-ui,sans-serif;color:#262626;font-size:17px;line-height:1.6;background:#FFFFFF;padding-bottom:128px">
+
+<header data-jb-hdr="1" style="position:sticky;top:0;z-index:10;background:#FFFFFF;padding:16px clamp(20px,5vw,80px);display:flex;align-items:center;gap:16px"><span data-jb-hdr-spacer="1" style="flex:1 1 0;min-width:0"></span>
+<nav style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px;background:#F7F7F7;border:1px solid #D4D4D4;border-radius:999px;padding:8px 12px">
+<a href="./PortfolioWebsite.dc.html" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#525252" style-hover="color:#262626"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+<a href="./PortfolioWebsite.dc.html#projekte" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#000000"><span data-lang="de" style="padding-bottom:2px;border-bottom:2px solid #000000">Projekte</span><span data-lang="en" style="padding-bottom:2px;border-bottom:2px solid #000000">Projects</span></a>
+<a href="./PortfolioWebsite.dc.html#ueber-mich" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 12px 4px;color:#525252" style-hover="color:#262626"><span data-lang="de">Über mich</span><span data-lang="en">About</span></a>
+<a href="#kontakt" onClick="{{ openContact }}" style="font-size:17px;font-weight:500;text-decoration:none;padding:6px 16px;border-radius:999px;background:#262626;color:#FFFFFF;margin-left:8px" style-hover="background:#000000"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></a>
+</nav>
+<sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeContact }}" style="position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.32);display:flex;align-items:center;justify-content:center;padding:24px;overflow-y:auto;animation:jbScrimIn 200ms ease-out both">
+<div onClick="{{ stopClose }}" style="background:#FFFFFF;border-radius:10px;width:100%;max-width:420px;text-align:left;padding:24px;max-height:calc(100vh - 48px);overflow-y:auto;flex:0 0 auto;box-shadow:0 1px 2px rgba(0,0,0,.06), 0 18px 48px rgba(0,0,0,.14);animation:jbPanelIn 280ms cubic-bezier(0.32,0.72,0,1) both">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+<div style="font-size:34px;font-weight:600;line-height:1.04;letter-spacing:-0.012em;color:#000000"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></div>
+<a href="#kontakt" onClick="{{ closeContact }}" style="display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#262626;text-decoration:none;padding:6px 14px 6px 11px;border-radius:999px;border:1px solid #D4D4D4" data-press-back="1"><span style="font-size:14px;line-height:1">←</span><span data-lang="de">Zurück</span><span data-lang="en">Back</span></a>
+</div>
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252;margin-top:8px"><span data-lang="de">Innsbruck, Österreich</span><span data-lang="en">Innsbruck, Austria</span></div>
+<div style="display:grid;gap:8px;margin-top:32px">
+<a href="mailto:jul.buscher@gmail.com" target="_top" style="display:grid;gap:4px;padding:14px 16px;border-radius:10px;text-decoration:none" data-press-soft="1">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252">E-Mail</span>
+<span style="font-size:17px;font-weight:500;color:#000000;word-break:break-all">jul.buscher@gmail.com</span>
+</a>
+<a href="https://www.linkedin.com/in/julian-buscher-a948b340a/" target="_blank" rel="noopener noreferrer" style="display:grid;gap:4px;padding:14px 16px;border-radius:10px;text-decoration:none" data-press-soft="1">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252">LinkedIn</span>
+<span style="font-size:17px;font-weight:500;color:#000000"><span data-lang="de">Profil öffnen</span><span data-lang="en">Open profile</span></span>
+</a>
+</div>
+</div>
+</div>
+</sc-if>
+<div data-jb-hdr-lang="1" style="flex:1 1 0;min-width:0;display:flex;justify-content:flex-end">
+<div role="group" aria-label="Sprache / Language" style="display:flex;gap:2px;background:#F7F7F7;border:1px solid #D4D4D4;border-radius:999px;padding:4px">
+<button type="button" data-lang-switch="de" aria-pressed="true" style="font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:500;line-height:1;padding:8px 12px;border:0;border-radius:999px;cursor:pointer">DE</button>
+<button type="button" data-lang-switch="en" aria-pressed="false" style="font-family:'Archivo',system-ui,sans-serif;font-size:14px;font-weight:500;line-height:1;padding:8px 12px;border:0;border-radius:999px;cursor:pointer">EN</button>
+</div>
+</div>
+</header>
+
+<div style="max-width:1120px;margin:0 auto;padding:24px clamp(20px,5vw,80px) 0">
+<a href="./PortfolioWebsite.dc.html#projekte" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#000000"><span data-lang="de">← Zurück zu den Projekten</span><span data-lang="en">← Back to projects</span></a>
+</div>
+
+<section style="max-width:1440px;margin:32px auto 0;padding:0 clamp(20px,5vw,80px)">
+<img src="assets/images/cnc-hero-16x9.jpg" alt="Zum Dosiersystem umgebaute 3018-CNC-Fräse mit 96-Well-Platte und Spritzenadapter" data-alt-en="3018 CNC router converted into a dispensing system, with a 96-well plate and syringe adapter" style="display:block;width:100%;aspect-ratio:16 / 9;object-fit:cover;border-radius:10px" />
+<div style="margin:8px 0 0;font-size:13px;line-height:1.45;color:#737373;text-align:right"><span data-lang="de">Foto: Massimo Del Prete / EMBL</span><span data-lang="en">Photo: Massimo Del Prete / EMBL</span></div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h1 style="font-size:clamp(2.125rem,5vw,3.5rem);font-weight:600;line-height:1.04;letter-spacing:clamp(-0.84px,calc(0.61px - 0.1295vw),-0.27px);color:#000000;margin:0 0 16px;max-width:900px">Fill &amp; Transfer Robot</h1>
+<p style="font-size:clamp(1.25rem,2.2vw,1.625rem);font-weight:600;line-height:1.2;letter-spacing:-0.005em;color:#000000;margin:0 0 24px;max-width:900px"><span data-lang="de">Automatisiertes Dosiersystem für Laborplatten</span><span data-lang="en">Automated dispensing system for lab plates</span></p>
+<p style="font-size:clamp(1.0625rem,1.6vw,1.25rem);line-height:1.5;color:#262626;max-width:720px;margin:0"><span data-lang="de">Im Praktikum an den Scientific Instrumentation Workshops (SIW) des EMBL Heidelberg (Fluid Controls, 08/2026 – 09/2026) habe ich eine 3018-CNC-Fräse zu einem automatisierten Dosiersystem für 96-Well-Platten umgebaut. Es befüllt die Platten und überträgt Flüssigkeit zwischen einzelnen Wells. Anbauteile, Pumpensteuerung und Software habe ich eigenständig entwickelt, mit Fusion 360, Arduino (C++), GRBL und Python, und das Fördervolumen mit einer Präzisionswaage kalibriert. Bei 0,1 ml lag die abgegebene Menge im Mittel 0,5 % unter dem Sollwert; die Grenzen des Systems habe ich unten dokumentiert.</span><span data-lang="en">During my internship at the Scientific Instrumentation Workshops (SIW), EMBL Heidelberg (Fluid Controls, 08/2026 – 09/2026), I converted a 3018 CNC router into an automated dispensing system for 96-well plates. It fills the plates and transfers liquid between individual wells. I developed the add-on parts, the pump control and the software myself, using Fusion 360, Arduino (C++), GRBL and Python, and calibrated the delivered volume on a precision balance. At 0.1 ml, the dispensed volume was on average 0.5 % below target; the system's limitations are documented below.</span></p>
+<p style="font-size:14px;line-height:1.45;color:#525252;max-width:720px;margin:32px 0 0"><span data-lang="de">Entstanden in den <a href="https://www.embl.org/groups/scientific-instrumentation-workshops/" target="_blank" rel="noopener">Scientific Instrumentation Workshops (SIW)</a> am EMBL Heidelberg. Fotos und Video mit freundlicher Genehmigung des EMBL.</span><span data-lang="en">Developed at the <a href="https://www.embl.org/groups/scientific-instrumentation-workshops/" target="_blank" rel="noopener">Scientific Instrumentation Workshops (SIW)</a>, EMBL Heidelberg. Photos and video courtesy of EMBL.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 32px;max-width:720px"><span data-lang="de">Das System im Einsatz</span><span data-lang="en">The system in operation</span></h2>
+<figure style="margin:0">
+<div onMouseEnter="{{ onEnter }}" onMouseLeave="{{ onLeave }}" style="position:relative;width:100%;border-radius:12px;overflow:hidden">
+<video ref="{{ videoRef }}" aria-label="{{ videoLabel }}" src="assets/video/cnc-befuellen-16x9.mp4" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" autoPlay="{{ true }}" preload="auto" poster="assets/video/cnc-befuellen-poster.jpg" disablePictureInPicture="{{ true }}" controlsList="nodownload" style="width:100%;aspect-ratio:16 / 9;object-fit:cover;display:block;border-radius:12px;background:#FAFAFA"></video>
+<button type="button" onClick="{{ toggle }}" aria-label="{{ buttonLabel }}" style="position:absolute;right:12px;bottom:12px;width:36px;height:36px;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,0.55);color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity 200ms ease-out;opacity:{{ buttonOpacity }}" style-hover="opacity:1" style-focus="opacity:1;outline:none;boxShadow:0 0 0 2px rgba(255,255,255,0.7)">
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ true }}"><span style="display:flex;gap:3px"><span style="width:3px;height:12px;background:#FFFFFF;display:block"></span><span style="width:3px;height:12px;background:#FFFFFF;display:block"></span></span></sc-if>
+<sc-if value="{{ isPaused }}" hint-placeholder-val="{{ false }}"><span style="width:0;height:0;border-left:11px solid #FFFFFF;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px;display:block"></span></sc-if>
+</button>
+</div>
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Kompletter Ablauf: Referenzfahrt, Befüllen des Schlauchsystems, Dosieren in die Wells und Transferfahrt.</span><span data-lang="en">Full sequence: homing, priming the tubing, dispensing into the wells and the transfer move.</span></figcaption>
+<div style="margin:4px 0 0;font-size:13px;line-height:1.45;color:#737373"><span data-lang="de">Video: Massimo Del Prete / EMBL</span><span data-lang="en">Video: Massimo Del Prete / EMBL</span></div>
+</figure>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Aufgabe &amp; Anforderungen</span><span data-lang="en">Task &amp; requirements</span></h2>
+<p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Für Laborversuche mussten Flüssigkeiten reproduzierbar in 96-Well-Platten dosiert werden: Kunststoffplatten mit 96 kleinen Vertiefungen („Wells“), in denen Proben parallel angesetzt werden. Ein kommerzieller Pipettierroboter stand für den Versuchsaufbau nicht zur Verfügung, eine 3018-CNC-Fräse dagegen schon.</span><span data-lang="en">Laboratory experiments required liquids to be dispensed reproducibly into 96-well plates: plastic plates with 96 small cavities (“wells”) in which samples are prepared in parallel. No commercial pipetting robot was available for the test setup, but a 3018 CNC router was.</span></p>
+<p style="max-width:720px;margin:0 0 16px"><span data-lang="de">Das System sollte:</span><span data-lang="en">The system had to:</span></p>
+<ul style="margin:0;padding-left:1.1em;max-width:720px;display:grid;gap:8px">
+<li><span data-lang="de">definierte Volumen in einzelne Wells abgeben und Flüssigkeit von einem Well in ein anderes übertragen</span><span data-lang="en">dispense defined volumes into individual wells and transfer liquid from one well to another</span></li>
+<li><span data-lang="de">Positionierung und Pumpe unabhängig voneinander ansteuern</span><span data-lang="en">drive positioning and pump independently of each other</span></li>
+<li><span data-lang="de">sich an andere Plattengeometrien und neue Kalibrierwerte anpassen lassen, ohne den Programmcode zu ändern</span><span data-lang="en">adapt to other plate geometries and new calibration factors without changing the program code</span></li>
+<li><span data-lang="de">ohne Programmierkenntnisse bedienbar sein und alle Eingaben prüfen, bevor sich die Maschine bewegt</span><span data-lang="en">be operable without programming knowledge and validate every input before the machine moves</span></li>
+</ul>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:11px;line-height:1.4;letter-spacing:0.08em;text-transform:uppercase;color:#525252;margin:0 0 24px"><span data-lang="de">Mein Anteil</span><span data-lang="en">My contribution</span></div>
+<div style="max-width:900px;border-bottom:1px solid #D4D4D4">
+<div style="display:flex;flex-wrap:wrap;gap:4px 32px;padding:16px 0;border-top:1px solid #D4D4D4">
+<div style="flex:0 0 200px;font-weight:500;color:#000000"><span data-lang="de">Selbst umgesetzt</span><span data-lang="en">Built by me</span></div>
+<div style="flex:1 1 320px;min-width:0;color:#525252">
+<ul style="margin:0;padding-left:1.1em;display:grid;gap:8px">
+<li><span data-lang="de">Alle Anbauteile parametrisch in Fusion 360 konstruiert und im 3D-Druck gefertigt: Dosieradapter, Pumpenhalterung, Elektronikgehäuse, Plattenhalter und Endschalterhalterungen</span><span data-lang="en">Designed all add-on parts parametrically in Fusion 360 and produced them by 3D printing: dispensing adapter, pump mount, electronics enclosure, plate holder and limit switch brackets</span></li>
+<li><span data-lang="de">Sechs mechanische Endschalter verlötet und montiert, Referenzfahrt und Endlagen in GRBL konfiguriert</span><span data-lang="en">Soldered and fitted six mechanical limit switches, configured the homing cycle and end stop positions in GRBL</span></li>
+<li><span data-lang="de">Separaten Steuerungsstrang für die Peristaltikpumpe aufgebaut: Arduino Nano, CNC-Shield, A4988-Treiber, eigene Firmware</span><span data-lang="en">Built a separate control chain for the peristaltic pump: Arduino Nano, CNC shield, A4988 driver, custom firmware</span></li>
+<li><span data-lang="de">Python-Steuerungssoftware in drei Schichten entwickelt: serielle Ansteuerung beider Controller, Befüll- und Transferabläufe, Bedienoberfläche</span><span data-lang="en">Developed the Python control software in three layers: serial control of both controllers, filling and transfer routines, user interface</span></li>
+<li><span data-lang="de">Sicherheits- und Komfortfunktionen ergänzt: Simulationsmodus ohne Hardware, Prüfung aller Parameter vor dem Start, Protokollierung jedes Laufs, grafische Planung der Plattenbelegung</span><span data-lang="en">Added safety and convenience functions: simulation mode without hardware, a preflight check of all parameters, logging of every run, graphical planning of the plate layout</span></li>
+<li><span data-lang="de">Pumpe gravimetrisch mit einer Präzisionswaage kalibriert, getrennt für Abgabe und Ansaugen, und die Reproduzierbarkeit in Messreihen ausgewertet</span><span data-lang="en">Calibrated the pump gravimetrically on a precision balance, separately for dispensing and aspiration, and evaluated reproducibility across measurement series</span></li>
+</ul>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 32px;padding:16px 0;border-top:1px solid #D4D4D4">
+<div style="flex:0 0 200px;font-weight:500;color:#000000"><span data-lang="de">Vorhanden</span><span data-lang="en">Already available</span></div>
+<div style="flex:1 1 320px;min-width:0;color:#525252"><span data-lang="de">3018-CNC-Mechanik mit GRBL-Controller, Peristaltikpumpe, Schalter, Kabel und Kleinteile aus dem Laborbestand</span><span data-lang="en">3018 CNC mechanics with GRBL controller, peristaltic pump, switches, cables and small parts from the lab stock</span></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 32px;padding:16px 0;border-top:1px solid #D4D4D4">
+<div style="flex:0 0 200px;font-weight:500;color:#000000"><span data-lang="de">Abstimmung</span><span data-lang="en">Supervision</span></div>
+<div style="flex:1 1 320px;min-width:0;color:#525252"><span data-lang="de">Regelmäßige Rücksprache mit dem Betreuer</span><span data-lang="en">Regular reviews with my supervisor</span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 32px;max-width:720px"><span data-lang="de">Technische Umsetzung</span><span data-lang="en">Technical implementation</span></h2>
+
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Systemaufbau</span><span data-lang="en">System architecture</span></h3>
+<p style="max-width:720px;margin:0 0 32px"><span data-lang="de">Die Fräse positioniert eine Dosiernadel über der Platte, eine Peristaltikpumpe fördert die Flüssigkeit durch einen dünnen Schlauch zur Nadel. Beide Teilsysteme haben eigene Controller und hängen über getrennte serielle Verbindungen am PC. Die Python-Software koordiniert sie: Erst ist die Bewegung abgeschlossen, dann läuft die Pumpe.</span><span data-lang="en">The router positions a dispensing needle above the plate; a peristaltic pump delivers the liquid to the needle through thin tubing. Both subsystems have their own controller and connect to the PC over separate serial links. The Python software coordinates them: the move completes first, then the pump runs.</span></p>
+<figure style="margin:0">
+<div style="width:100%;border:1px solid #D4D4D4;border-radius:10px;box-sizing:border-box;padding:clamp(20px,3vw,32px)">
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center"><span data-lang="de">PC · Python-Software</span><span data-lang="en">PC · Python software</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 24px">
+<div style="display:flex;flex-direction:column">
+<div style="width:1px;height:16px;background:#D4D4D4;margin:0 auto"></div>
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center"><span data-lang="de">CNC-Controller · GRBL</span><span data-lang="en">CNC controller · GRBL</span></div>
+<div style="width:1px;height:16px;background:#D4D4D4;margin:0 auto"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center"><span data-lang="de">3 Achsen</span><span data-lang="en">3 axes</span></div>
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center"><span data-lang="de">6 Endschalter</span><span data-lang="en">6 limit switches</span></div>
+</div>
+<div style="width:1px;flex:1 1 16px;min-height:16px;background:#D4D4D4;margin:0 auto"></div>
+</div>
+<div style="display:flex;flex-direction:column">
+<div style="width:1px;height:16px;background:#D4D4D4;margin:0 auto"></div>
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center">Arduino Nano · A4988</div>
+<div style="width:1px;height:16px;background:#D4D4D4;margin:0 auto"></div>
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center"><span data-lang="de">Peristaltikpumpe</span><span data-lang="en">Peristaltic pump</span></div>
+<div style="width:1px;height:16px;background:#D4D4D4;margin:0 auto"></div>
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center"><span data-lang="de">Schlauch und Dosiernadel</span><span data-lang="en">Tubing and dispensing needle</span></div>
+<div style="width:1px;flex:1 1 16px;min-height:16px;background:#D4D4D4;margin:0 auto"></div>
+</div>
+</div>
+<div style="border:1px solid #D4D4D4;box-sizing:border-box;padding:10px 12px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.4;letter-spacing:0.02em;color:#525252;text-align:center;width:93%;max-width:620px;margin:0 auto"><span data-lang="de">96-Well-Platte</span><span data-lang="en">96-well plate</span></div>
+</div>
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Zwei unabhängige Steuerungsstränge, koordiniert von einer Software.</span><span data-lang="en">Two independent control chains, coordinated by one piece of software.</span></figcaption>
+</figure>
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:#000000;margin:0 0 16px;max-width:720px;margin-top:64px"><span data-lang="de">Mechanik und 3D-Druck</span><span data-lang="en">Mechanics and 3D printing</span></h3>
+<p style="max-width:720px;margin:0 0 32px"><span data-lang="de">Alle Anbauteile sind in Fusion 360 konstruiert und im 3D-Druck gefertigt. Der Dosieradapter sitzt am CNC-Schlitten und führt Schlauch und Nadel senkrecht über die Platte. Der Plattenhalter fixiert die Platte immer an derselben Stelle, sodass der Nullpunkt auf Well A1 nach jeder Referenzfahrt wieder stimmt. An jeder Achse sitzen zwei Endschalter. Die Halterungen unterscheiden sich je Achse, weil der verfügbare Bauraum überall anders ist.</span><span data-lang="en">All add-on parts are designed in Fusion 360 and produced by 3D printing. The dispensing adapter sits on the CNC carriage and guides tubing and needle vertically above the plate. The plate holder always fixes the plate in the same position, so the origin on well A1 is correct again after every homing cycle. Each axis carries two limit switches. The brackets differ from axis to axis because the available installation space differs everywhere.</span></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+<figure style="margin:0">
+<img src="assets/images/cnc-dosiernadel-4x3.jpg" alt="Unteres Ende des gedruckten Dosieradapters mit Luer-Anschluss und Dosiernadel, darunter die Well-Platte" data-alt-en="Lower end of the printed dispensing adapter with Luer fitting and dispensing needle, the well plate below" style="width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:10px;border:1px solid #D4D4D4;box-sizing:border-box">
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Dosiernadel und Schlauchanschluss am unteren Ende des Adapters.</span><span data-lang="en">Dispensing needle and tubing connection at the lower end of the adapter.</span><span style="font-size:13px;color:#737373"> · <span data-lang="de">Foto: Massimo Del Prete / EMBL</span><span data-lang="en">Photo: Massimo Del Prete / EMBL</span></span></figcaption>
+</figure>
+<figure style="margin:0">
+<img src="assets/images/cnc-arbeitsbereich-4x3.jpg" alt="Arbeitsbereich von oben: 96-Well-Platte im gedruckten Halter auf dem Maschinentisch, Dosieradapter am Schlitten darüber" data-alt-en="Working area from above: 96-well plate in its printed holder on the machine bed, dispensing adapter on the carriage above it" style="width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:10px;border:1px solid #D4D4D4;box-sizing:border-box">
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Arbeitsbereich von oben mit der Platte im Halter.</span><span data-lang="en">Working area from above, with the plate in its holder.</span><span style="font-size:13px;color:#737373"> · <span data-lang="de">Foto: Massimo Del Prete / EMBL</span><span data-lang="en">Photo: Massimo Del Prete / EMBL</span></span></figcaption>
+</figure>
+<figure style="margin:0">
+<img src="assets/images/cnc-endschalter-x-4x3.jpg" alt="Mechanischer Endschalter in gedruckter Halterung an der X-Achse, daneben Trapezgewindespindel, Kupplung und Schrittmotor" data-alt-en="Mechanical limit switch in a printed bracket on the X axis, beside it the lead screw, coupling and stepper motor" style="width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:10px;border:1px solid #D4D4D4;box-sizing:border-box">
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Endschalter mit gedruckter Halterung an der X-Achse.</span><span data-lang="en">Limit switch with printed bracket on the X axis.</span><span style="font-size:13px;color:#737373"> · <span data-lang="de">Foto: Massimo Del Prete / EMBL</span><span data-lang="en">Photo: Massimo Del Prete / EMBL</span></span></figcaption>
+</figure>
+</div>
+
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:#000000;margin:0 0 16px;max-width:720px;margin-top:64px"><span data-lang="de">Elektronik</span><span data-lang="en">Electronics</span></h3>
+<p style="max-width:720px;margin:0 0 32px"><span data-lang="de">Die Pumpe läuft über einen eigenen Strang, unabhängig von der Fräsensteuerung: Arduino Nano, CNC-Shield und A4988-Treiber im 1/16-Mikroschrittbetrieb. Die Firmware auf dem Arduino meldet erst zurück, wenn ein Pumpbefehl vollständig ausgeführt ist, und lässt sich jederzeit per Stoppbefehl unterbrechen. Die zwei Endschalter jeder Achse sind parallel an denselben Eingang geschaltet und dienen der Referenzfahrt und als Schutz vor dem Anfahren der Endlage.</span><span data-lang="en">The pump runs on its own chain, independent of the router controller: Arduino Nano, CNC shield and A4988 driver in 1/16 microstepping. The firmware on the Arduino only reports back once a pump command has run to completion, and can be interrupted at any time with a stop command. The two limit switches on each axis are wired in parallel to the same input; they serve the homing cycle and protect against running into the end stop position.</span></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+<figure style="margin:0">
+<img src="assets/images/cnc-elektronikgehaeuse-4x3.jpg" alt="Komponenten der Pumpensteuerung vor der Montage: gedrucktes Gehäuse, CNC-Shield, Arduino Nano und A4988-Treiber" data-alt-en="Pump controller components before assembly: printed enclosure, CNC shield, Arduino Nano and A4988 driver" style="width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:10px;border:1px solid #D4D4D4;box-sizing:border-box">
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Aufbau des Elektronikgehäuses für die Pumpensteuerung.</span><span data-lang="en">Build of the electronics enclosure for the pump controller.</span></figcaption>
+</figure>
+<figure style="margin:0">
+<img src="assets/images/cnc-rueckansicht-4x3.jpg" alt="Rückansicht des Aufbaus: CNC-Controller im Acrylgehäuse mittig, Peristaltikpumpe und Vorratsröhrchen rechts, Pumpensteuerung im gedruckten Gehäuse davor" data-alt-en="Rear view of the setup: CNC controller in its acrylic case at the centre, peristaltic pump and reservoir tube on the right, pump controller in its printed enclosure in front" style="width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:10px;border:1px solid #D4D4D4;box-sizing:border-box">
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Rückansicht mit CNC-Controller und Pumpensteuerung.</span><span data-lang="en">Rear view with CNC controller and pump controller.</span><span style="font-size:13px;color:#737373"> · <span data-lang="de">Foto: Massimo Del Prete / EMBL</span><span data-lang="en">Photo: Massimo Del Prete / EMBL</span></span></figcaption>
+</figure>
+</div>
+
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:#000000;margin:0 0 16px;max-width:720px;margin-top:64px"><span data-lang="de">Software</span><span data-lang="en">Software</span></h3>
+<p style="max-width:720px;margin:0 0 32px"><span data-lang="de">Die Software ist in drei Schichten aufgebaut: unten die serielle Kommunikation mit beiden Controllern, darüber die Befüll- und Transferabläufe, oben Bedienung und Ablaufsteuerung. Maschinen- und Plattendaten liegen in Konfigurationsdateien statt im Code. Vor jedem Lauf prüft das Programm alle Volumen, Koordinaten und Schrittzahlen, meldet alle Fehler gesammelt und startet erst nach Bestätigung. Tritt ein Fehler auf, stoppt zuerst die Pumpe, dann fährt die Nadel hoch. Ein Simulationsmodus ersetzt die Hardware, sodass sich Abläufe ohne angeschlossene Maschine testen lassen. Belegungen werden in einer grafischen Oberfläche geplant, einzelne Befehle, etwa ein bestimmtes Volumen in ein bestimmtes Well abgeben, lassen sich auch direkt eingeben. Jeder Lauf wird protokolliert.</span><span data-lang="en">The software is built in three layers: serial communication with both controllers at the bottom, the filling and transfer routines above it, operation and sequence control on top. Machine and plate data live in configuration files rather than in the code. Before every run the program validates all volumes, coordinates and step counts, reports all errors together and starts only after confirmation. If an error occurs, the pump stops first, then the needle moves up. A simulation mode replaces the hardware so routines can be tested with no machine connected. Layouts are planned in a graphical interface; individual commands, such as dispensing a given volume into a given well, can also be entered directly. Every run is logged.</span></p>
+<h3 style="font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:#000000;margin:0 0 16px;max-width:720px;margin-top:64px"><span data-lang="de">Kalibrierung</span><span data-lang="en">Calibration</span></h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:start">
+<p style="margin:0;order:2"><span data-lang="de">Wie viel Flüssigkeit ein Motorschritt fördert, hängt von Pumpe, Schlauch und Betriebsbedingungen ab. Deshalb habe ich die Pumpe gravimetrisch kalibriert, mit Wasser auf einer Präzisionswaage. Abgabe und Ansaugen mussten getrennt kalibriert werden, weil die Pumpe in beide Richtungen unterschiedlich fördert. Die Dosierung läuft über die Schrittzahl statt über die Zeit, weil das reproduzierbarer ist: Aus dem Zielvolumen berechnet die Software die Schrittzahl für jeden Vorgang.</span><span data-lang="en">How much liquid one motor step delivers depends on the pump, the tubing and the operating conditions, so I calibrated the pump gravimetrically, with water on a precision balance. Dispensing and aspiration had to be calibrated separately, because the pump delivers differently in the two directions. Dosing is based on step count rather than time, because that is more reproducible: from the target volume, the software calculates the step count for each operation.</span></p>
+<figure style="margin:0">
+<img src="assets/images/cnc-gravimetrie-4x3.jpg" alt="Messaufbau zur Kalibrierung: Präzisionswaage mit Vorratsröhrchen im Windschutz, daneben Labornetzteil und der CNC-Aufbau mit Dosiernadel über der Well-Platte" data-alt-en="Calibration measurement setup: precision balance with the reservoir tube inside the draft shield, beside it the lab power supply and the CNC setup with the dispensing needle above the well plate" style="width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:10px;border:1px solid #D4D4D4;box-sizing:border-box">
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.45;color:#525252"><span data-lang="de">Gravimetrische Messung an der Präzisionswaage.</span><span data-lang="en">Gravimetric measurement on the precision balance.</span></figcaption>
+</figure>
+</div>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Herausforderungen &amp; Lösungen</span><span data-lang="en">Challenges &amp; solutions</span></h2><ul style="margin:0;padding-left:1.1em;max-width:720px;display:grid;gap:16px">
+<li><span data-lang="de"><strong style="font-weight:600;color:#000000">Schlauch verfängt sich beim Verfahren:</strong> In den ersten Versionen verhakte sich der Schlauch während der Fahrt am Schrittmotor der Z-Achse. Ich habe den Adapter zweiteilig aufgebaut und ein aufgestecktes Führungsrohr ergänzt, das den Schlauch über den Motor hinausführt.</span><span data-lang="en"><strong style="font-weight:600;color:#000000">Tubing snagging during moves:</strong> In the first versions the tubing caught on the Z-axis stepper motor while the machine was moving. I split the adapter into two parts and added a slip-on guide tube that routes the tubing up past the motor.</span></li>
+<li><span data-lang="de"><strong style="font-weight:600;color:#000000">Wenig Bauhöhe:</strong> Bei hochgefahrener Z-Achse bleiben zwischen Spindelhalter und Platte nur 63&#8239;mm für Adapter, Anschluss und Nadel. Ich habe den Unterbau des Adapters von 20 auf 8&#8239;mm gekürzt und die Fußplatte auf 1,5&#8239;mm reduziert.</span><span data-lang="en"><strong style="font-weight:600;color:#000000">Little vertical space:</strong> With the Z axis fully raised, only 63&#8239;mm remain between spindle holder and plate for adapter, connector and needle. I shortened the adapter base from 20 to 8&#8239;mm and reduced the base plate to 1.5&#8239;mm.</span></li>
+<li><span data-lang="de"><strong style="font-weight:600;color:#000000">Kollision beim Verschrauben:</strong> Die Köpfe der M5-Schrauben, die Adapter und Führungsrohr verbinden, stießen an die Rohrwand. Statt den Lochabstand zu ändern, habe ich den Außendurchmesser des Rohrs von 16 auf 12&#8239;mm reduziert. Der Innendurchmesser für den Schlauch blieb gleich.</span><span data-lang="en"><strong style="font-weight:600;color:#000000">Collision when bolting:</strong> The heads of the M5 screws joining adapter and guide tube hit the tube wall. Instead of changing the hole spacing, I reduced the tube’s outer diameter from 16 to 12&#8239;mm; the inner diameter for the tubing stayed the same.</span></li>
+</ul>
+<p style="max-width:720px;margin:16px 0 0"><span data-lang="de">Insgesamt acht Versionen des Adapters. Die meisten Änderungen kamen nicht aus dem Entwurf, sondern aus Problemen, die erst am realen Aufbau sichtbar wurden.</span><span data-lang="en">In total the adapter went through eight versions. Most changes did not come from the design itself but from problems that only showed up on the real setup.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Ergebnis &amp; Grenzen</span><span data-lang="en">Result &amp; limitations</span></h2>
+<p style="max-width:720px;margin:0 0 0"><span data-lang="de">Das System befüllt 96-Well-Platten automatisch und überträgt Flüssigkeit zwischen einzelnen Wells. Bei fünf Abgaben von je 0,1&#8201;ml lag das Volumen im Mittel 0,5&#8201;% unter dem Sollwert, der Variationskoeffizient lag bei rund 4,5&#8201;%. Die Schwachstelle ist das Ansaugen: In drei Transfers lagen angesaugtes und abgegebenes Volumen im Mittel ähnlich weit unter dem Sollwert (rund −9&#8201;% bzw. −6&#8201;%). Beim Ansaugen streuten die einzelnen Durchgänge mit rund 14&#8201;% aber um eine Größenordnung stärker als bei der Abgabe mit unter 1&#8201;%, vermutlich weil die Peristaltikpumpe rückwärts anders fördert. Außerdem wirkt die Flüssigkeit im Schlauch als Puffer: In einem Transfer kam mehr heraus, als angesaugt worden war. Der Füllstand des Schlauchs vor dem Lauf gehört deshalb zu den Versuchsbedingungen. Bei fünf bzw. drei Wiederholungen sind das Richtwerte, keine Spezifikation.</span><span data-lang="en">The system fills 96-well plates automatically and transfers liquid between individual wells. Across five dispenses of 0.1&#8201;ml each, the mean volume was 0.5&#8201;% below target, with a coefficient of variation of around 4.5&#8201;%. The weak point is aspiration: in three transfers, the aspirated and dispensed volumes were on average similarly far below target (around −9&#8201;% and −6&#8201;%). But individual aspiration runs scattered by around 14&#8201;%, an order of magnitude more than dispensing at below 1&#8201;%, probably because the peristaltic pump delivers differently in reverse. The liquid in the tubing also acts as a buffer: in one transfer, more came out than had been aspirated. The fill level of the tubing before a run is therefore part of the test conditions. With five and three repetitions, these are indicative values, not a specification.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<h2 style="font-size:clamp(1.625rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-0.01em;color:#000000;margin:0 0 16px;max-width:720px"><span data-lang="de">Was ich als Nächstes ändern würde</span><span data-lang="en">What I would change next</span></h2>
+<p style="max-width:720px;margin:0 0 0"><span data-lang="de">Die Pumpe über mehrere Volumen kalibrieren statt über zwei Punkte, oder sie durch eine Spritzenpumpe ersetzen, die ein definiertes Volumen verdrängt und in beide Richtungen gleich fördert.</span><span data-lang="en">Calibrate the pump across several volumes instead of two points, or replace it with a syringe pump that displaces a defined volume and delivers the same in both directions.</span></p>
+</section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<div style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:11px;line-height:1.4;letter-spacing:0.08em;text-transform:uppercase;color:#525252;margin:0 0 24px"><span data-lang="de">Kompetenzen</span><span data-lang="en">Skills applied</span></div>
+<div style="max-width:720px;display:flex;flex-wrap:wrap;gap:8px">
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Konstruktion</span><span data-lang="en">Design engineering</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">3D-Druck</span><span data-lang="en">3D printing</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Elektronik</span><span data-lang="en">Electronics</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Softwareentwicklung</span><span data-lang="en">Software development</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Messtechnik</span><span data-lang="en">Measurement</span></span>
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid #D4D4D4;border-radius:999px;background:#FAFAFA;font-size:14px;line-height:1.3;color:#262626;white-space:nowrap"><span data-lang="de">Laborautomation</span><span data-lang="en">Laboratory automation</span></span>
+</div>
+</section>
+<section style="max-width:1120px;margin:0 auto;padding:96px clamp(20px,5vw,80px) 0">
+<nav style="border-top:1px solid #D4D4D4;padding-top:24px;display:flex;flex-wrap:wrap-reverse;gap:24px 32px">
+<a href="./ProjektZugversuch.dc.html" data-projnav="prev" style="flex:1 1 260px;min-width:0;display:block;text-decoration:none;text-align:left">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252"><span data-lang="de"><span data-projnav-arrow="1">←</span> Vorheriges Projekt</span><span data-lang="en"><span data-projnav-arrow="1">←</span> Previous project</span></span>
+<span data-projnav-title="1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;margin-top:8px;font-size:clamp(1.25rem,1.9vw,1.375rem);font-weight:500;line-height:1.3;color:#262626;overflow-wrap:anywhere;hyphens:auto"><span data-lang="de">Bruchverhalten von Werkstoffen im Zugversuch</span><span data-lang="en">Fracture behaviour of materials in tensile testing</span></span>
+</a>
+<a href="./ProjektRoboterarm.dc.html" data-projnav="next" style="flex:1 1 260px;min-width:0;display:block;text-decoration:none;text-align:right">
+<span style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.02em;color:#525252"><span data-lang="de">Nächstes Projekt <span data-projnav-arrow="1">→</span></span><span data-lang="en">Next project <span data-projnav-arrow="1">→</span></span></span>
+<span data-projnav-title="1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;margin-top:8px;font-size:clamp(1.25rem,1.9vw,1.375rem);font-weight:500;line-height:1.3;color:#262626;overflow-wrap:anywhere;hyphens:auto"><span data-lang="de">Roboterarm in Fusion 360</span><span data-lang="en">Robotic arm in Fusion 360</span></span>
+</a>
+</nav>
+</section>
+</div>
+
+<footer style="background:#F7F7F7;margin-top:128px">
+<div style="max-width:1120px;margin:0 auto;padding:64px clamp(20px,5vw,80px);display:flex;flex-wrap:wrap;gap:32px 48px;justify-content:space-between;align-items:flex-start;font-family:'Archivo',system-ui,sans-serif">
+<div>
+<div style="font-size:20px;font-weight:500;letter-spacing:-0.01em;color:#262626">Julian Buscher</div>
+<div style="color:#525252;margin-top:8px"><span data-lang="de">Mechatronik · Universität Innsbruck &amp; UMIT TIROL</span><span data-lang="en">Mechatronics · University of Innsbruck &amp; UMIT TIROL</span></div>
+</div>
+<div style="display:grid;gap:8px">
+<a href="mailto:jul.buscher@gmail.com"  style="color:#262626;text-decoration:none" style-hover="color:#000000">jul.buscher@gmail.com</a>
+<a href="https://www.linkedin.com/in/julian-buscher-a948b340a/" target="_blank" rel="noopener" style="color:#262626;text-decoration:none" style-hover="color:#000000">LinkedIn</a>
+<a href="assets/Julian-Buscher-Lebenslauf.pdf" target="_blank" rel="noopener" style="color:#262626;text-decoration:none" style-hover="color:#000000"><span data-lang="de">Lebenslauf</span><span data-lang="en">CV</span><span style="color:#737373">&#8239;↗</span></a>
+</div>
+<div style="display:grid;gap:8px;font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252">
+<span>© 2026 Julian Buscher</span>
+<span style="display:flex;flex-wrap:wrap;gap:8px"><a href="Impressum.dc.html" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#262626"><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></a><span aria-hidden="true">·</span><a href="Impressum.dc.html#datenschutz" style="font-family:'Fragment Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;letter-spacing:0.02em;color:#525252;text-decoration:none" style-hover="color:#262626"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a></span>
+</div>
+</div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { playing: false, hover: false, contactOpen: false };
+  videoRef = React.createRef();
+  userPaused = false;
+
+  componentDidMount() {
+    const syncLang = () => this.setState({ lang: document.documentElement.lang === 'en' ? 'en' : 'de' });
+    syncLang();
+    this.langObs = new MutationObserver(syncLang);
+    this.langObs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    this.onEsc = (e) => { if (e.key === 'Escape' && this.state.contactOpen) this.setState({ contactOpen: false }); };
+    document.addEventListener('keydown', this.onEsc);
+    const v = this.videoRef.current;
+    if (!v) return;
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onPlay = () => this.setState({ playing: true });
+    this.onPause = () => this.setState({ playing: false });
+    v.addEventListener('play', this.onPlay);
+    v.addEventListener('pause', this.onPause);
+    this.io = new IntersectionObserver((entries) => {
+      const e = entries[0];
+      if (!e) return;
+      if (e.isIntersecting && e.intersectionRatio >= 0.4) {
+        if (!this.reduced && !this.userPaused) v.play().catch(() => {});
+      } else if (!v.paused) {
+        v.pause();
+      }
+    }, { threshold: [0, 0.4, 1] });
+    this.io.observe(v);
+  }
+
+  componentWillUnmount() {
+    if (this.langObs) this.langObs.disconnect();
+    document.removeEventListener('keydown', this.onEsc);
+    const v = this.videoRef.current;
+    if (v) { v.removeEventListener('play', this.onPlay); v.removeEventListener('pause', this.onPause); }
+    if (this.io) this.io.disconnect();
+  }
+
+  renderVals() {
+    const playing = this.state.playing;
+    return {
+      videoRef: this.videoRef,
+      contactOpen: this.state.contactOpen,
+      openContact: (e) => { e.preventDefault(); this.setState({ contactOpen: true }); },
+      closeContact: (e) => { e.preventDefault(); this.setState({ contactOpen: false }); },
+      stopClose: (e) => { e.stopPropagation(); },
+      isPlaying: playing,
+      isPaused: !playing,
+      buttonLabel: playing ? 'Video pausieren' : 'Video abspielen',
+      videoLabel: this.state.lang === 'en' ? 'Video: the Fill & Transfer Robot filling a 96-well plate' : 'Video: Der Fill & Transfer Robot befüllt eine 96-Well-Platte',
+      buttonOpacity: this.state.hover || !playing ? 1 : 0.6,
+      onEnter: () => this.setState({ hover: true }),
+      onLeave: () => this.setState({ hover: false }),
+      toggle: () => {
+        const v = this.videoRef.current;
+        if (!v) return;
+        if (v.paused) { this.userPaused = false; v.play().catch(() => {}); }
+        else { this.userPaused = true; v.pause(); }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

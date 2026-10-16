@@ -1,0 +1,20 @@
+/* Layout — §6.1/§6.2. */
+:root {
+  --container: 1120px;
+  --measure: 720px;   /* Textspalte, max. 75 Zeichen */
+  --bleed: 1440px;
+  --portrait: 800px;
+
+  --page-margin: 80px;
+
+  --bp-tablet: 1199px; /* @kind other */
+  --bp-mobile: 809px;  /* @kind other */
+
+  --aspect-tile: 4 / 3;      /* @kind other */
+  --aspect-hero: 16 / 9;     /* @kind other */
+  --aspect-hero-alt: 3 / 2;  /* @kind other */
+  --aspect-portrait: 1 / 1;  /* @kind other */
+}
+
+@media (max-width: 1199px) { :root { --page-margin: 40px; } }
+@media (max-width: 809px)  { :root { --page-margin: 20px; } }

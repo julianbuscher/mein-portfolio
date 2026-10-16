@@ -1,0 +1,28 @@
+/* Minimale Grundlage: Elementdefaults, die aus den Tokens folgen (§5.3, §6.4). */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { color: var(--text-heading); font-weight: var(--fw-semibold); margin: 0; }
+h1 { font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: var(--ls-display); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--ls-h3); }
+p { margin: 0; max-width: var(--measure); }
+strong, b { font-weight: var(--fw-semibold); }
+a { color: var(--text-link); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--text-link-hover); }
+code, kbd, samp { font-family: var(--font-mono); font-size: var(--fs-mono); }
+img { display: block; max-width: 100%; }
+hr { border: 0; border-top: var(--border); margin: 0; }
+:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring); outline-offset: var(--focus-ring-offset); }
+table { border-collapse: collapse; border-radius: var(--radius-flat); }
+th, td { text-align: left; border-bottom: var(--border); padding: var(--s-2) var(--s-3); font-weight: var(--fw-regular); }
+th { font-weight: var(--fw-semibold); color: var(--text-heading); }

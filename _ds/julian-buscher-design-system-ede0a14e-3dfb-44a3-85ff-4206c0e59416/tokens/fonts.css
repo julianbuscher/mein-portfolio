@@ -1,0 +1,6 @@
+/* Self-hosted Webfonts (§5.1: kein Google-Fonts-CDN, font-display: swap).
+   Binaries: assets/fonts/ — vom Nutzer geliefert 05.09.2026. */
+@font-face { font-family: "Archivo"; src: url("../assets/fonts/archivo-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("../assets/fonts/archivo-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("../assets/fonts/archivo-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Fragment Mono"; src: url("../assets/fonts/fragmentmono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
